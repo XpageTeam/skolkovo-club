@@ -1,0 +1,121 @@
+.title-block
+	display: flex
+	flex-direction: column
+
+
+	&__btn
+		margin-left: 20px
+		flex: none
+
+	&__title
+
+		h1
+			font-weight: 300
+			font-size: em(30)
+			line-height: calc(37 / 24)
+			color: #000
+
+	&-cont
+		background-color: #E5EAF0
+		color: #000
+		padding: 30px 0
+		margin-bottom: 65px
+
+.bread-crumbs
+	color: currentColor
+	font-size: em(14)
+	line-height: 1.4
+	display: flex
+	margin: 0
+
+
+	&__this
+		font-family: var(--geometria-font)
+		font-weight: 400
+		color: #8F9EB0 
+
+	&__link
+		transition: color .3s ease
+
+		a
+			font-family: var(--geometria-font)
+			font-weight: 400
+			color: var(--second-color)
+
+		&:hover, &:focus
+
+			a
+				border-bottom-color: var(--second-color)
+
+		&:nth-last-child(2)
+			&:after
+				border-color: #8F9EB0
+
+		&:after
+			content: ""
+			display: inline-block
+			margin: 0 13px 3px
+			size: 4px
+			border-top: 1px solid #000
+			border-right: 1px solid #000
+			transform: rotate(45deg)
+
+
+@media (max-width: 1200px)
+	
+	.title-block-cont
+		margin-bottom: 35px
+
+
+
+@media (max-width: 660px)
+
+
+	.title-block
+
+		&__text
+			display: flex
+			flex-direction: row-reverse
+
+		&__title
+			margin: 10px 0 0 0
+
+			h1
+				font-size: 1.2em
+
+		&-cont
+			margin-bottom: 30px
+
+
+	.bread-crumbs
+
+		&__this
+			display: none
+
+		&__link
+
+			&:not(:nth-last-child(2))
+				display: none
+
+			&:nth-last-child(2)
+				display: block
+				position: relative
+
+				&:before
+					content: ""
+					display: inline-block
+					size: 10px
+					border-top: 1px solid #fff
+					border-left: 1px solid #fff
+					transform: rotateZ(-45deg)
+					margin-right: 10px
+
+				&:after
+					display: none
+
+	body:not([class*="page-calc__body"])
+
+		.bread-crumbs__link:nth-last-child(2):before
+
+			border-top: 1px solid var(--main-color)
+			border-left: 1px solid var(--main-color)

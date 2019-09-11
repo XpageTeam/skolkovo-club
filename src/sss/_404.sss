@@ -1,0 +1,74 @@
+.p-404
+	display: flex
+	align-items: center
+
+	&-cont
+		display: flex
+		flex-direction: column
+		justify-content: center
+		height: calc(100vh - 246px - 326px - 75px )
+
+	&__number
+		margin-right: 150px 
+
+
+
+	&__text
+		&-title
+			font-size: em(24)
+			font-weight: 500
+			margin-bottom: 40px
+
+	&-links
+		display: flex
+		align-items: center
+
+		&__home
+			margin-right: 28px
+
+		&__text
+			font-size: em(14)
+
+
+@media (max-width: 1300px)
+	
+	.p-404__number
+		margin-right: 75px
+
+
+@media (max-width: 1200px)
+	
+	.p-404__number
+		max-width: 400px
+
+
+	.p-404__text-title
+		margin-bottom: 25px
+
+@media (max-width: 1000px)
+	
+	.p-404
+		flex-direction: column
+
+		&__number
+			margin: 0 0 30px 0
+
+
+		&__text
+			&-title
+				text-align: center
+
+		&-links
+			justify-content: center
+
+
+@media (max-width: 1000px)
+
+	.p-404-cont
+		height: auto
+
+	.p-404__number
+		max-width: 265px
+
+	.p-404__text-title
+		font-size: 1.3em

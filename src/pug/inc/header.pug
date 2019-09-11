@@ -1,0 +1,47 @@
+header.head
+	.head-top-cont
+		.wrapper
+			.head-top
+				.head-special
+					a(href="") Версия сайта для слабовидящих
+				.head-location
+					span.location Ваш город:
+					.head-location__select
+						select
+							option(value="1") Челябинск
+							option(value="2") Москва
+	.head-mid-cont
+		.wrapper
+			.head-middle
+				.head-logo
+					a(href="")
+						include ../../img/logo-m.svg
+					a(href="")
+						include ../../img/logo-t.svg
+				.search-cont
+					form(action="")
+						.search
+							input(type="text" placeholder="Поиск по сайту")
+							input(type="submit" value="Поиск").btn
+				a(href="").btn.btn--white Вход
+				a(href="").btn Регистрация
+				.burger
+					span
+	.head-bot-cont
+		.wrapper
+			.head-bot
+				nav.main-nav
+					ul.main-nav__list
+						li.main-nav__item
+							a(href="#menu").main-nav__link.fancybox.btn Получить поддержку
+						each title, i in ['Онлайн-запись', 'Календарь мероприятий', 'Новости', 'Документы', 'Контакты', 'Игра']
+							li.main-nav__item
+								a(href="").main-nav__link=title
+
+				.head-phone
+					a(href="tel:88003502474") 8 800 350 24 74
+					a(href="#").fancybox Заказать звонок
+				
+
+.mobile-menu
+	

@@ -1,0 +1,126 @@
+.main
+	.footer
+		margin-top: 0
+		
+.footer
+	background-color: var(--main-color)
+	color: #fff
+	font-family: var(--default-font)
+	margin-top: 70px
+
+	a
+		color: currentColor
+
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 45px 0
+
+	&__bot
+		padding: 50px 0 60px
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		&-cont
+			border-top: 1px solid rgba(255, 255, 255, 0.1)
+
+	&__text
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		font-size: rem(14)
+		line-height: 1.6
+
+
+
+		a
+			border: 0
+			color: var(--second-color)
+
+			&[href^="mailto:"]
+				display: inline-block
+				margin-bottom: 15px
+				color: #fff
+
+	&__text, &__dev
+		max-width: 370px
+		width: 100%
+
+	&__dev
+		display: flex
+		justify-content: flex-end
+
+	&__phone
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		padding-left: 75px
+
+		&:before
+			content: ''
+			position: absolute
+			top: calc(50% - 25px)
+			left: 0
+			size: 50px
+			border-radius: 50%
+			background-color: #20274E
+			background-image: url('../img/ico-phone-red.svg')
+			background-position: center
+			background-repeat: no-repeat
+
+		a
+			font-size: rem(14)
+
+			&[href^="tel"]
+				font-size: rem(18)
+				color: #fff
+
+				span
+					font-weight: 500
+
+			&:not([href^="tel"])
+				font-weight: 500
+				color: var(--second-color)
+
+
+.dev
+	display: block
+	background: rgba(31, 39, 62, 0.3)
+	border-radius: 4px
+	padding: 7px 11px
+
+	img
+		display: block
+
+
+@media screen and (max-width: 1500px)
+	
+	.footer
+		&__bot, &__top
+			padding: 25px 0
+
+@media screen and (max-width: 1000px)
+	
+	.f-soc
+		display: none
+
+	.footer
+		&__dev, &__text
+			max-width: 100%
+			width: auto
+
+
+@media screen and (max-width: 667px)
+	
+	.footer
+		margin-top: 40px
+
+		&__bot, &__top
+			flex-direction: column
+			align-items: flex-start
+
+		&__text
+			margin-bottom: 20px

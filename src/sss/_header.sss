@@ -1,0 +1,357 @@
+
+
+.main
+
+	.head
+		// position: absolute
+		top: 0
+		left: 0
+		right: 0
+		z-index: 10
+		background-color: #fff
+
+		&-logo
+			path
+				fill: var(--main-color)
+
+		&-top
+			border-bottom: 1px solid #D1DBE5
+
+
+.inner
+
+	.head
+		background-color: var(--background-color)
+
+		&-logo
+			path
+				fill: var(--main-color)
+
+		&-top
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+
+
+
+.banner-cont
+	~ 
+		.head
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			z-index: 10
+			background-color: transparent
+
+			.head-logo
+				path
+					fill: #fff
+
+			.head-top
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+
+			.head-special a, .head-location span
+				color: #fff
+
+
+			.search
+				input[type=text]
+					border: 1px solid rgba(255, 255, 255, 0.3)
+					background-color: transparent
+					color: #fff
+
+					&::-webkit-input-placeholder
+						color: #fff
+
+					&:-moz-placeholder
+						color: #fff
+
+					&::-moz-placeholder
+						color: #fff
+
+					&:-ms-input-placeholder
+						color: #fff
+						
+		.title-block
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			&-cont
+				background-color: var(--main-color)
+				color: #fff
+				margin-bottom: 0
+
+
+				.title-block__title
+					display: none
+
+				.bread-crumbs
+					&__link
+						a
+							color: #fff
+
+						&:after
+							border-color: #fff
+
+					&__this
+						color: #fff
+
+		.footer
+			margin-top: 0
+
+
+.head
+	font-family: var(--default-font)
+
+	.burger
+		display: none
+
+
+	&-top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 15px 0
+
+	&-middle
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 25px 0
+
+		.btn--white
+			margin-right: 11px
+
+	&-bot
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 20px 0
+		color: #fff
+
+		a
+			color: currentColor
+
+		&-cont
+			background-color: var(--main-color)
+
+	&-location
+		position: relative
+		display: flex
+		align-items: center
+		font-size: rem(14)
+		font-weight: 500	
+
+		&:before
+			content: ''
+			display: inline-block
+			size: 7px 10px
+			background-image: url('../img/ico-location.svg')
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+			margin-right: 13px
+
+		span
+			color: #9BA0A5
+			margin-right: 10px
+
+		select
+			border: 0
+			color: var(--second-color)
+			background-color: transparent
+
+		&__select
+			position: relative
+			display: flex
+
+			&:after
+				content: ''
+				display: inline-block
+				margin-left: 20px
+				size: 8px
+				border-right: 1px solid var(--second-color) 
+				border-bottom: 1px solid var(--second-color)
+				transform: rotate(45deg) 
+
+
+	&-special
+		position: relative
+		display: flex
+		align-items: center
+
+		a
+			border: 0
+			line-height: 1
+			color: #000
+			font-size: rem(14)
+
+		&:before
+			content: ''
+			display: inline-block
+			size: 11px 8px
+			background-image: url('../img/ico-eye.svg')
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+			margin-right: 20px
+
+	
+	&-logo
+		a
+			border: 0
+
+			&:not(:first-child)
+				margin-left: 45px
+
+	.search-cont
+		margin: 0 auto
+		max-width: 640px
+		width: 100%
+
+	&-phone
+		display: flex
+		align-items: flex-end
+		flex-direction: column
+
+		a
+			position: relative
+			border: 0
+
+			&[href^="tel"]
+				display: flex
+				align-items: center
+				line-height: 1
+				font-size: rem(18)
+				margin-bottom: 5px
+
+
+				&:before
+					content: ''
+					display: inline-block
+					size: 13px
+					margin-right: 16px
+					background-image: url('../img/ico-phone.svg')
+					background-size: contain
+					background-position: 50%
+					background-repeat: no-repeat
+
+			&.fancybox
+				color: #7E839F
+				font-size: rem(12)
+				font-weight: 500
+
+
+
+
+
+
+
+
+
+
+
+.main-nav
+	&__list
+		display: flex
+		align-items: center
+		margin-bottom: 0
+
+	&__item
+		&:not(:last-child)
+			margin-right: 48px
+
+	&__link
+		&.btn
+			position: relative
+			display: flex
+			align-items: center
+
+			&:before
+				content: ''
+				display: inline-block
+				margin-right: 20px
+				background-image: url('../img/ico-burger.svg')
+				background-position: 50%
+				background-size: contain
+				size: 18px 16px
+
+
+@media screen and (max-width: 1600px)
+	
+	.banner-cont
+		~.head
+			position: relative
+			order: -1
+			color: #000
+			background-color: #fff
+
+
+			.head-location span, .head-special a
+				color: #000
+
+
+			.head-logo path
+				fill: var(--main-color)
+
+			.search 
+				input[type=text]
+					border-color: var(--background-color)
+					color: #000
+
+
+					&::-webkit-input-placeholder
+						color: #000
+
+					&:-moz-placeholder
+						color: #000
+
+					&::-moz-placeholder
+						color: #000
+
+					&:-ms-input-placeholder
+						color: #000
+
+
+
+@media screen and (max-width: 1300px)
+	
+	.head 
+		.search-cont
+			max-width: 410px
+
+		.burger
+			display: flex
+			margin-left: 30px
+
+	.head-bot-cont
+		display: none
+
+
+@media screen and (max-width: 1000px)
+	
+	.head
+		&-special
+			display: none
+
+
+		.search-cont
+			display: none
+
+		&-middle
+			padding: 15px 0
+
+			.btn
+				display: none
+
+
+@media screen and (max-width: 667px)
+	
+	.head-logo
+		display: flex
+		align-items: center
+		margin-right: 20px
+		max-width: 230px
+
+		a:not(:first-child)
+			margin-left: 20px
