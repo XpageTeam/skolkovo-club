@@ -1,0 +1,138 @@
+.main-sliders
+	position: relative
+	// overflow: hidden
+	display: flex
+
+	&__top
+		margin-bottom: 70px
+
+	
+
+
+
+	&__btns
+		padding: 45px 50px
+		background-color: var(--background-color)
+
+	&__btn
+		display: flex
+		align-items: center
+		cursor: pointer
+
+		&:not(:last-child)
+			margin-bottom: 15px
+
+		&.active
+			.text
+				color: currentColor
+
+			.circle
+
+				&:after
+					transform: scale(2)
+					border-width: .2px
+
+		.circle
+			position: relative
+			size: 11px
+			border-radius: 50%
+			background-color: currentColor
+
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				size: 11px
+				border-radius: 50%
+				border: 1px solid currentColor
+				transform: scale(1)
+				transition: transform .5s ease-in-out, border-width .3s ease
+
+		.text
+			margin-left: 35px
+			color: #000
+			transition: color .3s ease
+
+
+	&__sliders
+		width: calc(100% - 660px)
+		margin-left: 60px
+
+.stock__item
+	border: 1px solid var(--border-color)
+	padding: 55px 40px
+
+	&-top
+		display: flex
+		align-items: center
+		margin-bottom: 35px
+
+		figure
+			width: 130px
+			height: 100px
+			display: flex
+			justify-content: center
+			align-items: center
+			padding: 10px
+			border: 1px solid var(--border-color)
+			margin-right: 40px
+
+	&-title
+		font-size: em(24)
+
+	&-text
+		font-weight: 400
+		padding-bottom: 35px
+		border-bottom: 1px solid var(--border-color) 
+
+	&-bot
+		margin-top: 30px
+		display: flex
+		justify-content: space-between
+
+	&-link
+		a
+			position: relative
+			font-weight: bold
+			text-transform: uppercase
+			font-size: em(12)
+			color: #000
+			display: flex
+			align-items: center
+
+			&:after
+				content: ''
+				display: block
+				size: 10px 8px
+				background-image: url('../img/ico-arrow-right.svg')
+				background-repeat: no-repeat
+				background-position: center
+				background-size: contain
+				margin-left: 20px
+
+
+
+
+
+.stock-slider
+
+	
+	&:not(.active)
+		position: absolute 0
+		opacity: 0
+		pointer-events: none
+
+	.swiper
+
+		&-slide
+			height: auto
+			display: flex
+			flex-direction: column
+
+	> .stock-slider
+
+		&__slide
+
+			&:nth-child(n + 4)
+				display: none !important

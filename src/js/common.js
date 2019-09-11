@@ -1,28 +1,29 @@
 import $ from "jquery"
 // import is from "is_js"
 // import stringEffect from "./stringAnimate.js"
-import "./calc.js"
 import "./faq.js"
-import "./contacts.js"
 import "./mobile-menu.js"
 
 
-import { TimelineLite, TweenLite, Linear } from 'gsap';
-import ScrollMagic from 'scrollmagic';
+
+// import { TimelineLite, TweenLite, Linear } from 'gsap';
+// import ScrollMagic from 'scrollmagic';
 //import ScrollToPlugin from "gsap/ScrollToPlugin.js"
 
 // import animation from 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators'
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap'
 
 import {Swiper, Navigation, EffectFade, Pagination} from "swiper/dist/js/swiper.esm.js";
-
 Swiper.use([Navigation, EffectFade, Pagination])
+
+import "./stock-slider.js"
 
 
 window.$ = $;
 window.jQuery = $;
+// window.is = is;
 
 require("./countTo.js");
 // window.is = is
@@ -41,163 +42,127 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	//TweenLite.to(window, 2, {scrollTo:"body"});
 
-	if($('.task path').length){
+	// if($('.task path').length){
 
-		$('.task path').each(function(i, el){
-			var $this = $(el);
+	// 	$('.task path').each(function(i, el){
+	// 		var $this = $(el);
 
-			$this.css({
-				'stroke-dasharray': this.getTotalLength()+', '+ this.getTotalLength(),
-				'stroke-dashoffset': this.getTotalLength(),
-			})
+	// 		$this.css({
+	// 			'stroke-dasharray': this.getTotalLength()+', '+ this.getTotalLength(),
+	// 			'stroke-dashoffset': this.getTotalLength(),
+	// 		})
 
-			// setTimeout(function(){
-			// 	$this.css({
-			// 		'stroke-dasharray': this.getTotalLength()+', '+ this.getTotalLength(),
-			// 		'stroke-dashoffset': this.getTotalLength(),
-			// 	})
+		
 
-			// }, 300)
+	// 	})
+	// }
 
 
+	// $('.task__item').each(function(i,el){
+	// 	var $this = $(el);
 
-		})
-	}
+	// 	setTransitionDelay(i,$this);
 
-
-	$('.task__item').each(function(i,el){
-		var $this = $(el);
-
-		setTransitionDelay(i,$this);
-
-	});
+	// });
 
 
-	function setTransitionDelay(i,$this){
-		setTimeout(function(){
-			$this.addClass('js__animated');
-		}, 200*i);
+	// function setTransitionDelay(i,$this){
+	// 	setTimeout(function(){
+	// 		$this.addClass('js__animated');
+	// 	}, 200*i);
 
-	}
+	// }
 
 
 
-	var controller = new ScrollMagic.Controller();
+	// var controller = new ScrollMagic.Controller();
 
 
 
-	// if(window.matchMedia("(max-width: 660px) and (orientation: portrait)").matches){
 
-	// 	var taskItems = document.queryselectorAll('.task__item');
+	// if($('#statistics').length){
+	//  	new ScrollMagic.Scene({
+	// 	                    triggerElement: "#statistics",
+	// 	                   //triggerHook: 0.9,
+	//     					//duration: "20%",
+	// 	                   	//offset: 50
+	// 	                })
+	// 	                // /.triggerHook("onCenter")
+	// 	                .setClassToggle(".statistics__item", "active") // add class toggle
+	// 	                .addTo(controller)
 
-	// 	for (let i = 0; i < taskItems.length; i++){
 
-	// 	    new ScrollMagic.Scene({
-	//                     triggerElement: "#task",
-	//                     triggerHook: 0.5,
-	//                     duration: 500,
-	//                    	//offset: -300
-	//                 })
-	//                 .addTo(controller)
-	//                 .setClassToggle(".task", "active") // add class toggle
-	//                 //.triggerHook("onCenter")
-	//                 .setTween(
-	//                     new TimelineMax({delay: 1})
-	//                         .add(TweenMax.to(taskItems[i], 1, { transform: 0 } ))
-	//                 );
+	// }
 
-	// 		}
+	// if($('#supports').length){
 
-	// 	} 
-
-	if($('#statistics').length){
-	 	new ScrollMagic.Scene({
-		                    triggerElement: "#statistics",
-		                   //triggerHook: 0.9,
-	    					//duration: "20%",
-		                   	//offset: 50
-		                })
-		                // /.triggerHook("onCenter")
-		                .setClassToggle(".statistics__item", "active") // add class toggle
-		                .addTo(controller)
-
-	    // new ScrollMagic.Scene({triggerElement: "#task"})
-	    // 				.triggerHook("onEnter")
-					// 	.setClassToggle(".task", "active") // add class toggle
-					// 	//.addIndicators() // add indicators (requires plugin)
-					// 	.addTo(controller);
-
-	}
-
-	if($('#supports').length){
-
-	    new ScrollMagic.Scene({
-	    				triggerElement: "#supports",
-	    				triggerHook: 0.5,
-	    				duration: "80%",
-	    				offset: 50,
-	    			})
-					// .triggerHook("onLeave")
-					.setClassToggle(".supports-top, .supports__list ", "active") // add class toggle
-					//.setTween("#supports > div", {y: "80%", ease: Linear.easeNone}) // паралакс
-					//.addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
-	}
+	//     new ScrollMagic.Scene({
+	//     				triggerElement: "#supports",
+	//     				triggerHook: 0.5,
+	//     				duration: "80%",
+	//     				offset: 50,
+	//     			})
+	// 				// .triggerHook("onLeave")
+	// 				.setClassToggle(".supports-top, .supports__list ", "active") // add class toggle
+	// 				//.setTween("#supports > div", {y: "80%", ease: Linear.easeNone}) // паралакс
+	// 				//.addIndicators() // add indicators (requires plugin)
+	// 				.addTo(controller);
+	// }
 
 
 
-	if($('.partners__item')){
+	// if($('.partners__item')){
 
-		var partnersItems = document.querySelectorAll(".partners__item");
+	// 	var partnersItems = document.querySelectorAll(".partners__item");
 
-		for (var i=0; i < partnersItems.length; i++) {
+	// 	for (var i=0; i < partnersItems.length; i++) {
 
-			// partnersItems[i].style.transform = "translate3d(0,20px,0)";
+	// 		// partnersItems[i].style.transform = "translate3d(0,20px,0)";
 
-		 	new ScrollMagic.Scene({
-		                    triggerElement: partnersItems[i],
-		                    triggerHook: 0.8,
-		                    duration: 500,
-		                   	//offset: 0
-		                })
-		                .addTo(controller)
-		                .setClassToggle(partnersItems[i], "visible") // add class toggle
-		                //.addIndicators({name: ".partners__item " + (i+1) }) // add indicators (requires plugin)
-		                .setTween(
-			                   new TimelineLite()
-									.from(partnersItems[i], 1.5, {y: 30, opacity: 0})
-									.to(partnersItems[i], 1.5, {y: 0, opacity: 1, delay: 7})
-		                );
-		}
-	}
+	// 	 	new ScrollMagic.Scene({
+	// 	                    triggerElement: partnersItems[i],
+	// 	                    triggerHook: 0.8,
+	// 	                    duration: 500,
+	// 	                   	//offset: 0
+	// 	                })
+	// 	                .addTo(controller)
+	// 	                .setClassToggle(partnersItems[i], "visible") // add class toggle
+	// 	                //.addIndicators({name: ".partners__item " + (i+1) }) // add indicators (requires plugin)
+	// 	                .setTween(
+	// 		                   new TimelineLite()
+	// 								.from(partnersItems[i], 1.5, {y: 30, opacity: 0})
+	// 								.to(partnersItems[i], 1.5, {y: 0, opacity: 1, delay: 7})
+	// 	                );
+	// 	}
+	// }
 
 
 
-	if($('.main .news__list').length){
+	// if($('.main .news__list').length){
 
-		var newsItems = document.querySelectorAll(".news__list .news__item");
+	// 	var newsItems = document.querySelectorAll(".news__list .news__item");
 
-		for (var i=0; i < newsItems.length; i++) {
+	// 	for (var i=0; i < newsItems.length; i++) {
 
-			// partnersItems[i].style.transform = "translate3d(0,20px,0)";
+	// 		// partnersItems[i].style.transform = "translate3d(0,20px,0)";
 
-		 	new ScrollMagic.Scene({
-		                    triggerElement: newsItems[i],
-		                    triggerHook: 0.8,
-		                    duration: 100,
-		                   	//offset: 0
-		                })
-		                .addTo(controller)
-		                .setClassToggle(newsItems[i], "visible") // add class toggle
-		                //.addIndicators({name: ".news__item " + (i+1) }) // add indicators (requires plugin)
-		                .setTween(
-			                   new TimelineLite()
-			                   .fromTo(newsItems[i], 1, {y : 30 * i, opacity: 0}, {y : 0,  opacity: 1})
-									//.from(newsItems[i], 1.5, {y: 30, opacity: 0})
-									//.to(newsItems[i], 1.5, {y: 0, opacity: 1, delay: 7})
-		                );
-		}
-	}
+	// 	 	new ScrollMagic.Scene({
+	// 	                    triggerElement: newsItems[i],
+	// 	                    triggerHook: 0.8,
+	// 	                    duration: 100,
+	// 	                   	//offset: 0
+	// 	                })
+	// 	                .addTo(controller)
+	// 	                .setClassToggle(newsItems[i], "visible") // add class toggle
+	// 	                //.addIndicators({name: ".news__item " + (i+1) }) // add indicators (requires plugin)
+	// 	                .setTween(
+	// 		                   new TimelineLite()
+	// 		                   .fromTo(newsItems[i], 1, {y : 30 * i, opacity: 0}, {y : 0,  opacity: 1})
+	// 								//.from(newsItems[i], 1.5, {y: 30, opacity: 0})
+	// 								//.to(newsItems[i], 1.5, {y: 0, opacity: 1, delay: 7})
+	// 	                );
+	// 	}
+	// }
 
 
 

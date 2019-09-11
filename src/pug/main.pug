@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		
+		main#content
+			section.main-sliders__cont
+				.wrapper
+					.main-sliders__top
+						.title Компании клуба
+					.main-sliders
+						.main-sliders__btns-cont
+							.main-sliders__btns
+								.main-sliders__btn.active(style="color: #C60929" data-id="12") 
+									.circle 
+									.text Гражданское строительство
+								.main-sliders__btn(style="color: #009233" data-id="0") 
+									.circle 
+									.text Военное строительство
+								.main-sliders__btn(style="color: #FF7E0A" data-id="1")
+									.circle 
+									.text Энергетическое строительство
+								.main-sliders__btn(style="color: #006CBB" data-id="2") 
+									.circle 
+									.text Гидротехническое строительство
+								.main-sliders__btn(style="color: #C4C4C4" data-id="3") 
+									.circle 
+									.text Транспортное строительствово
+								.main-sliders__btn(style="color: #000000" data-id="4") 
+									.circle 
+									.text Промышленное строительство
+								.main-sliders__btn(style="color: #FFC400" data-id="5") 
+									.circle 
+									.text Системы автоматизации и робототехники
+								.main-sliders__btn(style="color: #A52D97" data-id="6") 
+									.circle 
+									.text Производство
+								.main-sliders__btn(style="color: #009233" data-id="7") 
+									.circle 
+									.text Сельскохозяйственное строительствотво
+							
+						.main-sliders__sliders
+
+							.stock-slider#12.active
+								.main-sliders-arrow
+									.swiper-arrow.swiper-button-prev
+									.swiper-arrow.swiper-button-next
+								.swiper-list
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											.swiper-slide
+												.stock-slider__slide
+													.stock__item
+														.stock__item-top
+															figure
+																img(src="img/vtb-logo.png", alt="")
+															.stock__item-title Банк ВТБ 1
+														.stock__item__info
+															.stock__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества.
+														.stock__item-bot
+															.stock__item-tags
+																a(href="" style="color: #006CBB").tag Гидротехническое строительство
+															.stock__item-link
+																a(href="") перейти в профиль
+							- for (let i = 0; i < 8; i++)
+								.stock-slider(id=""+i+"")
+									.main-sliders-arrow
+										.swiper-arrow.swiper-button-prev
+										.swiper-arrow.swiper-button-next
+									.swiper-list
+										.swiper-wrapper
+											- for (let i = 0; i < 2; i++)
+												.swiper-slide
+													.stock__item
+														.stock__item-top
+															figure
+																img(src="img/vtb-logo.png", alt="")
+															.stock__item-title Банк ВТБ 
+														.stock__item__info
+															.stock__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества.
+														.stock__item-bot
+															.stock__item-tags
+																a(href="").tag Гидротехническое строительство
+															.stock__item-link
+																a(href="") перейти в профиль
+			section.news-slider-cont
+				.wrapper
+					.slider-title
+						.title Новости
+						.slider__nav
+							.swiper-arrow.swiper-button-prev
+							.swiper-arrow.swiper-button-next
+
+					.swiper-container
+						.swiper-wrapper
+							- for (let i = 0; i < 4; i++)
+								.swiper-slide
+									a(href="").news__item
+										figure
+											img(src="img/news-1.jpg", alt="")
+										.news__item-title Заголовок новости
+										.news__item-text Завод по переработке отходов производства и потребления в строительные материалы. Завод по переработке отходов производства и потребления в строительные материалы. 
+										.news__item-date 05 - февраля - 2019
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

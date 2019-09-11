@@ -39,35 +39,6 @@ module.exports = {
 				}
 			}
 		},
-		// "Geometria": {
-		// 	variants: {
-		// 		normal: {
-		// 			300: {
-		// 				url: {
-		// 					woff: "../fonts/geometria-light.woff",
-		// 					woff2: "../fonts/geometria-light.woff2"
-		// 				}
-		// 			},
-		// 			400: {
-		// 				url: {
-		// 					woff: "../fonts/geometria.woff",
-		// 					woff2: "../fonts/geometria.woff2"
-		// 				}
-		// 			},
-		// 			500: {
-		// 				url: {
-		// 					woff: "../fonts/geometria-medium.woff",
-		// 					woff2: "../fonts/geometria-medium.woff2"
-		// 				}
-		// 			},
-		// 			700: {
-		// 				url: {
-		// 					woff: "../fonts/geometria-bold.woff",
-		// 					woff2: "../fonts/geometria-bold.woff2"
-		// 				}
-		// 			},
-		// 		}
-		// 	}
-		// },
+		
 	}
 }
