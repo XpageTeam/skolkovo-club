@@ -1,0 +1,177 @@
+input[type="hidden"] + .filial__item-el
+	margin-left: 0
+
+
+					
+.filial
+
+	&-load-photo
+		background: var(--secondColor)
+		width: 100%
+		padding: 45px 50px 15px
+		margin: 35px 0 -30px 0
+
+		&:empty 
+			display: none
+
+
+		img 
+			margin: 0 30px 30px 0
+			height: 145px
+			width: 145px
+			object-fit: cover 
+			object-position: top
+			display: inline-block
+
+			&:first-child
+				margin-left: 0
+
+	&-item__add
+		.button
+			background: var(--mainColor)
+
+			input 
+				color: #fff
+
+
+
+	&-name
+		max-width: 540px
+
+
+	&__item
+		display: flex
+		flex-wrap: wrap
+		border-top: 1px solid var(--borderColor)
+		padding: 40px 0 50px
+
+		&-el
+			width: 45%
+
+			> * 
+				&:not(:first-child)
+					margin-top: 35px
+
+			&:not(:first-child)
+				margin-left: auto
+
+			&--photo
+				width: 100%
+				margin-top: 40px
+
+				.forms-input-cont--file
+					max-width: 317px
+
+		&-save
+			width: 100%
+			margin-top: 30px
+
+		&__add
+			margin-top: 40px
+
+		.forms__input
+			padding: 0 10px
+
+		.forms__input-time
+			display: flex
+			flex-wrap: wrap
+
+
+
+			.forms
+				&__label
+					width: 100%
+
+				&__input
+					padding: 0 7px
+					text-align: center
+
+					&-cont
+						width: 105px
+
+						+ .forms__input-cont
+							margin-left: 35px
+
+							&:before 
+								content: ''
+								position: absolute
+								left: -18px
+								top: 50%
+								background: #000
+								display: block
+								width: 5px
+								height: 1px
+
+	&__item
+		&-save
+			.button 
+				span
+					padding: 0
+
+				input
+					padding: 0.6em 2em
+					background-color: transparent
+					border: 0
+					font-size: 1rem
+					font-family: "GothamPro" !important
+					font-weight: 300
+			
+	&__list
+		margin-top: 55px
+
+
+
+		.forms__input-cont--multiple
+			display: flex
+			flex-wrap: wrap
+			margin: 0 0 -30px -40px
+
+			.forms__input-cont
+				max-width: 235px
+				width: calc((100% - 40px * 3) / 3)
+				margin: 0 0 30px 40px
+
+.add-input
+	position: relative
+	size: 62px
+	background: #f2f5f7
+	cursor: pointer
+	margin-left: 40px
+	order: 1
+
+	&:before 
+		content: ''
+		position: absolute
+		top: calc(50% - 5px)
+		left: 50%
+		display: block
+		width: 1px
+		height: 10px
+		background: #c7ccd1
+	&:after 
+		content: ''
+		position: absolute
+		top: 50%
+		left: calc(50% - 5px)
+		display: block
+		width: 10px
+		height: 1px
+		background: #c7ccd1
+
+
+.js__input-del, .input-del
+	background: #000
+	width: 40px
+	height: 62px
+	display: block
+	position: absolute
+	right: -40px
+	top: 0
+	cursor: pointer
+
+.forms__input-cont
+	position: relative
+
+.page-personal
+	.faq, .news
+		margin-top: 0

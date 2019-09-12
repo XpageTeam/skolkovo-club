@@ -1,0 +1,56 @@
+.news
+	&-slider
+		overflow: hidden
+
+		img
+			border-radius: 5px
+			display: block
+
+
+		&-cont
+			padding: 40px 0
+
+
+	&__item
+		figure
+			margin-bottom: 30px
+			
+		&-title
+			font-size: em(22)
+			font-weight: 500
+			margin-bottom: 25px
+
+		&-date
+			margin-top: 30px
+			line-height: 1
+			color: #E04E39
+			font-weight: 600
+
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -30px
+
+		.news__item
+			width: calc(100% / 3)
+			padding: 30px
+			transition: box-shadow .3s ease-in-out
+
+			&:hover
+				box-shadow: var(--box-shadow)
+
+
+
+
+
+.slider
+	&-title
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 70px
+
+	&__nav
+		display: flex
+
+

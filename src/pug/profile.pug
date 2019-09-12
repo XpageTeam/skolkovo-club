@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Профиль компании
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		include inc/breadcrumbs.pug
+		+titleBLock(["Главная",  "Профиль компании"])
+		
+		main#content
+			.inner-content
+				.wrapper
+					section.trends
+						.trends__list
+							.trends__item
+								figure.trends__item-img
+									img(src="img/trends-2.png", alt="")
+								.trends__item-info
+									.trends__item-top
+										.trends__item-title Банк ВТБ
+										.trends__tag
+											a(href="" style="background-color: #006CBB").tag Гидротехническое строительство
+
+									.trends__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества. 
+									.trends__item-bot
+										a(href="").link vtb.ru
+
+					section.contacts__slider-cont
+						.contacts__slider-top
+							.title Контакты
+							.contacts__slider-arrow
+								.swiper-button.swiper-button-prev
+								.swiper-button.swiper-button-next
+
+						.contacts__slider-bot
+							.contacts__address
+								.contacts__address-item
+									.contacts__address-label Адрес
+									.contacts__address-text Большой бульвар, 42, Сколково, Москва, 121205
+								.contacts__address-item
+									.contacts__address-label Телефон
+									.contacts__address-text
+										a(href="tel:+79257003778") +7 (925) 700 37 78
+								.contacts__address-item
+									.contacts__address-label E-mail
+									.contacts__address-text
+										a(href="mailto:ligas86@mail.ru") ligas86@mail.ru
+							.contacts__slider
+								.swiper-list
+									.swiper-wrapper
+										- for (let i = 0; i < 2; i++)
+											.swiper-slide
+												.contacts__slider-slide
+													img(src="img/photos/contacts.jpg", alt="")
+									.swiper-pagination
+
+					section.projects
+						.projects__list
+							each item, i in [{title: "Банк открытие", tag: 'Гражданское строительство', link: 'open.ru', bg: 'C60929'}, {title: 'Банк Сбербанк', tag: 'Военное строительство', link: 'sberbank.ru', bg: '009233'}, {title: 'Банк ВТБ', tag: 'Энергетическое строительство', link: 'vtb.ru', bg: '006CBB'}]
+								.projects__item
+									figure.projects__item-img
+										img(src="img/photos/projects.jpg", alt="")
+									.projects__item-info
+										.projects__item-top
+											.projects__item-title=item.title
+
+										.projects__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества. 
+										.projects__item-bot
+											.projects__tag
+												a(href="" style="background-color: #66CC3A").tag Внедрение 
+												a(href="" style="background-color: #"+item.bg).tag=item.tag
+						.projects__btn
+							a(href="").btn.btn--more 
+								span Показать еще
+					
+
+						
+
+
+
+
+
+
+
+
+				
+
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

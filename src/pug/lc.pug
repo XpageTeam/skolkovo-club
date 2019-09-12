@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Личный кабинет
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading.page-lc
+		include inc/header.pug
+		include inc/breadcrumbs.pug
+		+titleBLock(["Главная",  "Личный кабинет"])
+		
+		main#content
+			.inner-content
+				.wrapper
+					section.lc
+						form(action="")
+							.filial
+								.filial-name
+									.forms__input-cont
+										input.forms__input(type="text" placeholder="Введите название")
+										label.forms__label Название юридического лица:
+
+							.filial__list
+								#filial__list
+									.filial__item(data-id="0")
+										.filial__item-el
+											.forms__input-cont
+												input.forms__input(type="text" )
+												label.forms__label Адрес магазина:
+											.forms__input-phone
+												.forms__label Телефон магазина:
+												.forms__input-cont--multiple
+													.forms__input-cont
+														input.forms__input(type="text" name="tel" placeholder="+7 (900) 000-00-00")
+													.add-input
+
+										.filial__item-el
+											.forms__input-time
+												.forms__label Режим работы:
+												.forms__input-cont
+													input.forms__input(type="time")
+												.forms__input-cont
+													input.forms__input(type="time")
+											.forms__input-email
+												.forms__label Электронная почта:
+												.forms__input-cont--multiple
+													.forms__input-cont
+														input.forms__input(type="email" placeholder="")
+													.add-input
+										.filial__item-el--photo
+											.forms__label Фото магазина:
+											.forms__input-cont--multiple
+												.forms__input-cont.forms-input-cont--file
+													input(type="file" id="file-1" accept="image").forms__input.forms__input--file
+													input(readonly="" type="text").forms__input.forms__input--file-support
+													label(for="file-1").forms__label--file
+													span.input-del(title="Удалить")
+													.forms__error-message.forms__error-message--file
+														i.forms__error-message-icon
+												.add-input
+										.filial-load-photo
+
+
+
+								.filial__item-save
+									.button
+										span 
+											input(type="submit" value="Сохранить")
+								.filial-item__add
+									.button
+										span 
+											input(type="submit" value="+ Добавить магазин")
+
+						
+
+
+
+
+
+
+
+
+				
+
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

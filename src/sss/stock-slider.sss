@@ -1,7 +1,30 @@
 .main-sliders
-	position: relative
+	// position: relative
 	// overflow: hidden
 	display: flex
+
+	.swiper-list
+
+		overflow: visible
+
+		&:before
+			content: ''
+			display: block
+			background-color: #fff
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transform: translate3d(-50%,0,0)
+			z-index: 10
+
+
+	&__cont
+		padding: 80px 0 40px
+
+		.wrapper
+			position: relative
 
 	&__top
 		margin-bottom: 70px
@@ -11,8 +34,16 @@
 
 
 	&__btns
-		padding: 45px 50px
+		padding: 45px 55px
 		background-color: var(--background-color)
+		display: flex
+		flex-direction: column
+		flex: 1 1 auto
+
+		&-cont
+			flex: 1 1 auto
+			display: flex
+			z-index: 50
 
 	&__btn
 		display: flex
@@ -47,7 +78,7 @@
 				border-radius: 50%
 				border: 1px solid currentColor
 				transform: scale(1)
-				transition: transform .5s ease-in-out, border-width .3s ease
+				transition: transform .2s ease-in-out, border-width .3s ease
 
 		.text
 			margin-left: 35px
@@ -56,12 +87,69 @@
 
 
 	&__sliders
+		// position: relative
 		width: calc(100% - 660px)
 		margin-left: 60px
+
+
+	&-arrow
+		display: flex
+		position: absolute
+		top: 10px
+		right: 20px
+
+	&__bot
+		margin-top: 40px
+		display: flex
+		z-index: 10
+		position: relative
+
+
+.swiper-button
+	position: static
+	size: 6px 11px 
+	background-image: url('../img/ico-swiper-arrow.svg')
+	background-size: contain
+	background-repeat: no-repeat
+	background-position: center
+	margin: 0
+
+
+
+	&-prev
+		transform: rotate(180deg)
+		margin-right: 47px
+
+.swiper-pagination
+	z-index: 20
+	
+	&-bullet
+		size: 6px
+		background-color: var(--background-color)
+		opacity: 1
+
+
+.swiper-pagination-bullet-active
+	background-color: #000
+
+.swiper-container-horizontal
+	> .swiper-pagination-bullets
+		left: auto
+		right: 12px
+		width: auto
+		bottom: 0
+
+
+		.swiper-pagination-bullet
+			margin: 0 9px
 
 .stock__item
 	border: 1px solid var(--border-color)
 	padding: 55px 40px
+	transition: box-shadow .3s ease-in-out
+
+	&:hover
+		box-shadow: var(--box-shadow)
 
 	&-top
 		display: flex
@@ -91,37 +179,25 @@
 		display: flex
 		justify-content: space-between
 
-	&-link
-		a
-			position: relative
-			font-weight: bold
-			text-transform: uppercase
-			font-size: em(12)
-			color: #000
-			display: flex
-			align-items: center
-
-			&:after
-				content: ''
-				display: block
-				size: 10px 8px
-				background-image: url('../img/ico-arrow-right.svg')
-				background-repeat: no-repeat
-				background-position: center
-				background-size: contain
-				margin-left: 20px
-
-
-
 
 
 .stock-slider
 
 	
 	&:not(.active)
-		position: absolute 0
-		opacity: 0
-		pointer-events: none
+		position: relative
+
+		.main-sliders-arrow
+			pointer-events: none
+			opacity: 0
+
+		.swiper-pagination
+			pointer-events: none
+
+		.swiper-list
+			position: absolute 0
+			opacity: 0
+			pointer-events: none
 
 	.swiper
 

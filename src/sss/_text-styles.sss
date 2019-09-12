@@ -3,7 +3,7 @@ strong
 
 
 h2, h3, h4, h5, h6, p, table, .table-wrap, ul, ol
-	margin-bottom: em(27)
+	margin-bottom: em(27) !important
 
 img
 	&[align]
@@ -13,8 +13,8 @@ img
 h2, h3, h4, h5, h6, p, img
 	line-height: 1.7
 
-	// &:first-child
-	// 	margin-top: 0
+
+
 
 h2, h3, h4, h5, h6
 	font-weight: 500
@@ -27,8 +27,8 @@ h2, h3, h4, h5, h6
 		margin-top: 0
 
 h2
-	font-size: em(26)
-	line-height: calc(32 / 26)
+	font-size: em(24)
+	line-height: calc(30 / 24)
 
 h3
 	font-size: em(22)
@@ -70,10 +70,12 @@ img[height]
 table:not([class])
 	margin: em(52) 0 em(20)
 
+	p 
+		margin: 0 !important
+
 	thead
 
 		th, td
-			background: #F4F4F4
 			text-align: left
 			padding-top: em(22)
 			padding-bottom: em(22)

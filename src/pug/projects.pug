@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Проекты
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		include inc/breadcrumbs.pug
+		+titleBLock(["Главная",  "Проекты"])
+		
+		main#content
+			.inner-content
+				.wrapper
+					include inc/tags.pug
+					section.projects
+						.projects__list
+							each item, i in [{title: "Банк открытие", tag: 'Гражданское строительство', link: 'open.ru', bg: 'C60929'}, {title: 'Банк Сбербанк', tag: 'Военное строительство', link: 'sberbank.ru', bg: '009233'}, {title: 'Банк ВТБ', tag: 'Энергетическое строительство', link: 'vtb.ru', bg: '006CBB'}, {title: 'Банк Raiffeisen', tag: 'Гидротехническое строительство', link: 'raiffeisen.ru', bg: 'C4C4C4'}]
+								.projects__item
+									figure.projects__item-img
+										img(src="img/photos/projects.jpg", alt="")
+									.projects__item-info
+										.projects__item-top
+											.projects__item-title=item.title
+
+										.projects__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества. 
+										.projects__item-bot
+											.projects__tag
+												a(href="" style="background-color: #66CC3A").tag Внедрение 
+												a(href="" style="background-color: #"+item.bg).tag=item.tag
+											a(href="").link-arrow Перейти в профиль
+						.projects__btn
+							a(href="").btn.btn--more 
+								span Показать еще
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

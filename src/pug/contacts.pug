@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Контакты
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		include inc/breadcrumbs.pug
+		+titleBLock(["Главная",  "Контакты"])
+		
+		main#content
+			.inner-content
+				.wrapper
+					include inc/tags.pug
+					section.contacts
+						.contacts__map
+							<!-- img/ico-marker.svg-->
+							img(src="img/photos/map.jpg", alt="")
+						.contacts__address
+							.contacts__address-item
+								.contacts__address-label Адрес
+								.contacts__address-text Большой бульвар, 42, Сколково, Москва, 121205
+							.contacts__address-item
+								.contacts__address-label Телефон
+								.contacts__address-text
+									a(href="tel:+79257003778") +7 (925) 700 37 78
+							.contacts__address-item
+								.contacts__address-label E-mail
+								.contacts__address-text
+									a(href="mailto:ligas86@mail.ru") ligas86@mail.ru
+
+						
+
+
+
+
+
+
+
+
+				
+
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

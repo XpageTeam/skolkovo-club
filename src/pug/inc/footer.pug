@@ -3,10 +3,13 @@ footer.footer
 		.wrapper
 			.footer__top
 				.footer-logo
-					img(src="img/logo.svg", alt="")
+					img(src="img/logo-footer.svg", alt="")
 				
 				.footer-menu
-					each title in ['Направления', 'Проекты', 'Новости', 'Контакты']
+					.footer-menu__item.active
+						a(href="").footer-menu__link Направления
+
+					each title in ['Проекты', 'Новости', 'Контакты']
 						.footer-menu__item
 							a(href="").footer-menu__link=title
 	.footer__bot-cont

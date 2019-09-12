@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Направление
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		include inc/breadcrumbs.pug
+		+titleBLock(["Главная",  "Направления"])
+		
+		main#content
+			.inner-content
+				.wrapper
+					section.intro
+						.intro-text Компании ассоциации готовы реализовать масштабные проекты в разных направлениях строительства и производства на территории россии и за рубежом
+
+					include inc/tags.pug
+					section.trends
+						.trends__list
+							each item, i in [{title: "Банк открытие", tag: 'Гражданское строительство', link: 'open.ru', bg: 'C60929'}, {title: 'Банк Сбербанк', tag: 'Военное строительство', link: 'sberbank.ru', bg: '009233'}, {title: 'Банк ВТБ', tag: 'Энергетическое строительство', link: 'vtb.ru', bg: '006CBB'}, {title: 'Банк Raiffeisen', tag: 'Гидротехническое строительство', link: 'raiffeisen.ru', bg: 'C4C4C4'}]
+								.trends__item
+									figure.trends__item-img
+										img(src="img/trends-"+i+".png", alt="")
+									.trends__item-info
+										.trends__item-top
+											.trends__item-title=item.title
+											.trends__tag
+												a(href="" style="background-color: #"+item.bg).tag=item.tag
+
+										.trends__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества. 
+										.trends__item-bot
+											a(href="").link=item.link
+											a(href="").link-arrow Перейти в профиль
+						.trends__btn
+							a(href="").btn.btn--more 
+								span Показать еще
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

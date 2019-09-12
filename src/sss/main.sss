@@ -1,13 +1,124 @@
 @import "../css/common.css"
 @import "_base.sss"
 @import "_vars.sss"
+@import "_text-styles.sss"
+@import "_title-block.sss"
 @import "_header.sss"
+@import "_footer.sss"
 @import "_form-elements.sss"
 @import "../css/swiper.css"
 @import "mobile-menu.sss"
 @import "stock-slider.sss"
 @import "tag.sss"
+@import "news.sss"
+@import "trend.sss"
+@import "projects.sss"
+@import "contacts.sss"
+@import "lc.sss"
 
 .title
 	font-size: em(24)
 	font-weight: 500
+
+
+.btn
+	position: relative
+	overflow: hidden
+	display: block
+	padding: 16px 32px
+	border-radius: 5px
+	border: 1px solid var(--background-color)
+	line-height: 1
+
+	span
+		transition: color .3s ease-in-out
+		position: relative
+		z-index: 2
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		left: -100px
+		bottom: -100px
+		width: 100px
+		height: 100px
+		background-color: var(--main-color)
+		transition: width 1s ease, height 1s ease, left 1s ease, bottom 1s ease
+		border-radius: 50%
+		z-index: 1
+
+	&:hover
+
+		span
+			color: #fff
+			transition-delay: color .5s
+
+
+		&:before
+			width: 300px
+			height: 300px
+			left: -100px
+			bottom: -100px
+
+
+	&--more
+		display: flex
+		align-items: center
+		line-height: 1
+		padding: 17px 25px
+		background-color: var(--background-color)
+
+		&.loading
+
+			&:after
+				animation: rotate 1s linear infinite
+
+
+		&:after
+			content: ''
+			size: 14px
+			display: block
+			background-image: url('../img/ico-more.svg')
+			background-repeat: no-repeat
+			background-position: center
+			background-repeat: no-repeat
+			margin-left: 20px
+			flex: none
+			z-index: 1
+			transition: filter .3s ease
+
+		&:hover
+			&:after
+				filter: invert(1)
+
+
+.intro
+	margin-bottom: 100px
+
+	&-text
+		font-size: em(24)
+		font-weight: 300
+		max-width: 800px
+
+
+
+
+.link-arrow
+	position: relative
+	font-weight: bold
+	text-transform: uppercase
+	font-size: em(12)
+	color: #000
+	display: flex
+	align-items: center
+
+	&:after
+		content: ''
+		display: block
+		size: 10px 8px
+		background-image: url('../img/ico-arrow-right.svg')
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+		margin-left: 20px

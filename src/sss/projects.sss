@@ -1,0 +1,55 @@
+.projects
+	&__item
+		display: flex
+		margin-bottom: 85px
+
+
+		&-img
+			flex: none
+			margin-right: 75px
+			border-radius: 5px
+			overflow: hidden
+
+			img
+				border-radius: 5px
+				transform: scale(1.1)
+				transition: transform 1s ease-in-out
+				display: block
+
+		&:hover
+			.projects__item-img
+				img
+					transform: scale(1)
+
+
+		&-top
+			display: flex
+			justify-content: space-between
+			margin-bottom: 30px
+			align-items: flex-start
+
+		&-title
+			font-size: em(24)
+			font-weight: 500
+
+		&-bot
+			margin-top: 40px
+			padding-top: 40px
+			border-top: 1px solid var(--border-color)
+			display: flex
+			justify-content: space-between
+
+			.link
+				color: #E04E39
+				font-weight: bold
+				font-size: 12px
+				text-transform: uppercase
+
+	&__tag
+		.tag
+			margin-right: 20px
+
+
+	&__btn
+		display: flex
+		justify-content: center

@@ -1,21 +1,46 @@
-.main
-	.footer
-		margin-top: 0
-		
 .footer
-	background-color: var(--main-color)
-	color: #fff
-	font-family: var(--default-font)
-	margin-top: 70px
+	background-color: var(--background-color)
+	margin-top: 100px
+	color: #646567
+	padding-top: 80px
 
-	a
-		color: currentColor
+	&-menu
+		display: flex
+
+		&__item
+			&:not(:first-child)
+				margin-left: 60px
+
+			&.active, &:hover
+				.footer-menu__link
+
+					&:after
+						opacity: 1
+
+
+		&__link
+			position: relative
+			color: currentColor
+
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				bottom: -2px
+				left: 0
+				width: 100%
+				height: 1px
+				background-color: var(--main-color)
+				opacity: 0
+				transition: opacity .3s ease
+
+
 
 	&__top
 		display: flex
 		justify-content: space-between
-		align-items: center
-		padding: 45px 0
+		align-items: flex-start
+		padding: 0 0 45px 0
 
 	&__bot
 		padding: 50px 0 60px
@@ -24,20 +49,13 @@
 		align-items: center
 
 		&-cont
-			border-top: 1px solid rgba(255, 255, 255, 0.1)
+			border-top: 1px solid rgba(100, 101, 103, 0.1)
 
 	&__text
-		display: flex
-		flex-direction: column
-		align-items: flex-start
-		font-size: rem(14)
-		line-height: 1.6
-
-
 
 		a
 			border: 0
-			color: var(--second-color)
+			color: currentColor
 
 			&[href^="mailto:"]
 				display: inline-block
@@ -52,45 +70,12 @@
 		display: flex
 		justify-content: flex-end
 
-	&__phone
-		position: relative
-		display: flex
-		flex-direction: column
-		align-items: flex-end
-		padding-left: 75px
-
-		&:before
-			content: ''
-			position: absolute
-			top: calc(50% - 25px)
-			left: 0
-			size: 50px
-			border-radius: 50%
-			background-color: #20274E
-			background-image: url('../img/ico-phone-red.svg')
-			background-position: center
-			background-repeat: no-repeat
-
-		a
-			font-size: rem(14)
-
-			&[href^="tel"]
-				font-size: rem(18)
-				color: #fff
-
-				span
-					font-weight: 500
-
-			&:not([href^="tel"])
-				font-weight: 500
-				color: var(--second-color)
+	
 
 
 .dev
 	display: block
-	background: rgba(31, 39, 62, 0.3)
 	border-radius: 4px
-	padding: 7px 11px
 
 	img
 		display: block

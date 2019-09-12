@@ -8,10 +8,12 @@ header.head-cont
 				
 			nav.main-nav
 				ul.main-nav__list
-					each title in ['Направления', 'Проекты', 'Новости', 'Контакты']
+					li.main-nav__item.active
+						a(href="").main-nav__link Направления
+					each title in ['Проекты', 'Новости', 'Контакты']
 						li.main-nav__item
 							a(href="").main-nav__link=title
-			
+
 			a(href="").head-auth Личный кабинет
 			.head-langs
 				select

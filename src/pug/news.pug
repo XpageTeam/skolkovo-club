@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Новости
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		include inc/breadcrumbs.pug
+		+titleBLock(["Главная",  "Новости"])
+		
+		main#content
+			.inner-content
+				.wrapper
+					section.news
+						.news__list
+							- for (let i = 0; i < 8; i++)
+								a(href="").news__item
+									figure
+										img(src='img/photos/news-1.jpg')
+									.news__item-title Заголовок новости
+									.news__item-text Завод по переработке отходов производства и потребления в строительные материалы. Завод по переработке отходов производства и потребления в строительные материалы. 
+									.news__item-date 05 - февраля - 2019
+							
+									
+						
+
+
+
+
+
+
+
+
+				
+
+
+
+
+			
+		include inc/footer.pug
+		include inc/scripts.pug

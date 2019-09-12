@@ -1,6 +1,7 @@
 .head
+	position: relative
 	display: flex
-	align-items: flex-start
+	// align-items: flex-start
 	border-bottom: 1px solid rgba(100, 101, 103, 0.1)
 	padding-bottom: 25px
 
@@ -14,6 +15,7 @@
 		align-items: center
 		padding-top: 20px
 		line-height: 1
+		margin-bottom: auto
 
 		&:before
 			content: ''
@@ -39,20 +41,46 @@
 			color: #646567
 .main-nav
 	margin: 0 auto
+	display: flex
 
 	&__list
 		display: flex
 
 	&__item
+		display: flex
+
 		&:not(:last-child)
 			margin-right: 50px
 
+		&.active, &:hover
+			.main-nav__link
+				&:after
+					opacity: 1
+
 	&__link
+		position: relative
 		color: #646567
 		font-weight: 500
 		padding: 20px 0
 		line-height: 1
-		display: block
+		display: flex
+		flex-direction: column
+		flex: 1 1 auto
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			top: calc(100% - -22px)
+			height: 3px
+			width: 100%
+			background-color: var(--main-color)
+			opacity: 0
+			transition: opacity .3s ease
+			border-radius: 5px
+
+
+
 
 
 

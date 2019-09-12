@@ -3,6 +3,7 @@ import $ from "jquery"
 // import stringEffect from "./stringAnimate.js"
 import "./faq.js"
 import "./mobile-menu.js"
+import "./lc.js"
 
 
 
@@ -39,6 +40,25 @@ require("../css/jquery.fancybox.css")
 
 
 document.addEventListener("DOMContentLoaded", function(){
+
+
+	var contactsSwiper = new Swiper('.contacts__slider .swiper-list', {
+			slidesPerView: 1,
+			spaceBetween: 40,
+			// loop: true,
+			navigation: {
+				prevEl: (".contacts__slider-cont .swiper-button-prev"),
+				nextEl: (".contacts__slider-cont .swiper-button-next")
+			},
+			pagination: {
+			    el: '.swiper-pagination',
+			    type: 'bullets',
+			    clickable: true,
+			  },
+			
+		});
+
+
 
 	//TweenLite.to(window, 2, {scrollTo:"body"});
 
@@ -173,38 +193,24 @@ document.addEventListener("DOMContentLoaded", function(){
 		$(this).closest('.default-input').find('.default-input__input[type="text"]').val(value);
 	});
 
-	var headHeight = $('.head').innerHeight();
 
-	// $('.task-cont').css({
-	// 	'padding-top' : headHeight,
+
+
+	// $('.questions__btn').click(function(){
+
+	// 	var $this = $(this);
+
+	// 	$this.siblings('.questions__item-bot').slideToggle();
+	// 	$this.closest('.questions__item').toggleClass('js__open');
+
+	// 	if (!$(this).data('status')) {
+	// 	  	$(this).html('Свернуть');
+	// 	    $(this).data('status', true);
+	// 	  } else {
+	// 	  	$(this).html('Развернуть');
+	// 	    $(this).data('status', false);
+	// 	  }
 	// })
-
-	if(window.matchMedia("(min-width: 1500px)").matches){
-
-		$('.banner-info-cont').css({
-			'padding-top' : headHeight,
-			
-		})
-	}
-
-
-
-
-	$('.questions__btn').click(function(){
-
-		var $this = $(this);
-
-		$this.siblings('.questions__item-bot').slideToggle();
-		$this.closest('.questions__item').toggleClass('js__open');
-
-		if (!$(this).data('status')) {
-		  	$(this).html('Свернуть');
-		    $(this).data('status', true);
-		  } else {
-		  	$(this).html('Развернуть');
-		    $(this).data('status', false);
-		  }
-	})
 
 
 
@@ -227,15 +233,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	// 	el.classList.add("js__ready")
 	// });
 
-	var supportsSwiper = new Swiper('.supports-slider', {
-		effect: "fade",
-		slidesPerView: 1,
+	var newsSwiper = new Swiper('.news-slider', {
+		slidesPerView: 3,
 		loop: true,
 		roundLengths: true,
 		a11y: false,
+		spaceBetween: 60,
 		navigation: {
-			nextEl: '.supports-slider__arrows .swiper-button-next',
-			prevEl: '.supports-slider__arrows .swiper-button-prev',
+			nextEl: '.news-slider .swiper-button-next',
+			prevEl: '.news-slider .swiper-button-prev',
 		},
 	});
 

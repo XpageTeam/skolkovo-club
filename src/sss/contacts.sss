@@ -1,0 +1,99 @@
+.contacts
+	display: flex
+	align-items: center
+
+	&__map
+		flex: none
+		margin-right: 70px
+
+	&__address
+
+		&-item
+			padding: 30px 0
+			&:not(:last-child)
+				border-bottom: 1px solid var(--border-color)
+
+
+			a
+				color: #000
+
+				&:hover
+					color: var(--main-color)
+
+		&-label
+			color: #646567
+			font-size: em(10)
+			text-transform: uppercase
+			line-height: 1
+			margin-bottom: 10px
+
+
+.contacts__slider
+	width: calc(100% - 600px - 65px)
+
+	&-cont
+		position: relative
+		padding: 80px 0
+		margin: 80px 0
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 300vw
+			height: 100%
+			transform: translate3d(-50%,0,0)
+			background-color: var(--background-color)
+
+
+	&-arrow
+		display: flex
+
+
+	&-top
+		display: flex
+		justify-content: space-between
+
+	&-bot
+		display: flex
+		align-items: center
+		position: relative
+
+
+		.contacts__address
+			position: relative
+			z-index: 20
+			flex: 1 1 auto
+			margin-right: 65px
+
+	.swiper-container-horizontal
+		> .swiper-pagination-bullets
+			position: static
+			display: flex
+			justify-content: flex-end
+			margin-top: 40px
+
+	.swiper-pagination-bullet-active
+		background-color: #000 !important
+
+	.swiper-pagination-bullet
+		background-color: #e5e5e5
+
+
+	.swiper-list
+
+		overflow: visible
+
+		&:before
+			content: ''
+			display: block
+			background-color: var(--background-color)
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			transform: translate3d(-50%,0,0)
+			z-index: 10

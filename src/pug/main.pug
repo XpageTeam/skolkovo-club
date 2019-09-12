@@ -48,8 +48,8 @@ html(lang="ru")
 
 							.stock-slider#12.active
 								.main-sliders-arrow
-									.swiper-arrow.swiper-button-prev
-									.swiper-arrow.swiper-button-next
+									.swiper-button.swiper-button-prev
+									.swiper-button.swiper-button-next
 								.swiper-list
 									.swiper-wrapper
 										- for (let i = 0; i < 2; i++)
@@ -64,17 +64,18 @@ html(lang="ru")
 															.stock__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества.
 														.stock__item-bot
 															.stock__item-tags
-																a(href="" style="color: #006CBB").tag Гидротехническое строительство
+																a(href="" style="background-color: #006CBB").tag Гидротехническое строительство
 															.stock__item-link
-																a(href="") перейти в профиль
+																a(href="").link-arrow перейти в профиль
+									.swiper-pagination
 							- for (let i = 0; i < 8; i++)
 								.stock-slider(id=""+i+"")
 									.main-sliders-arrow
-										.swiper-arrow.swiper-button-prev
-										.swiper-arrow.swiper-button-next
+										.swiper-button.swiper-button-prev
+										.swiper-button.swiper-button-next
 									.swiper-list
 										.swiper-wrapper
-											- for (let i = 0; i < 2; i++)
+											- for (let i = 0; i < 5; i++)
 												.swiper-slide
 													.stock__item
 														.stock__item-top
@@ -85,24 +86,46 @@ html(lang="ru")
 															.stock__item-text Думаете, текст «О нас» — это едва ли не единственное место на корпоративном сайте и в интернете в целом, где можно нахваливать себя, хвастаться, писать о своих достижениях, лучших качествах? Да кому они нужны, ваши качества.
 														.stock__item-bot
 															.stock__item-tags
-																a(href="").tag Гидротехническое строительство
+																a(href="" style="background-color: #FFC400;" ).tag Гидротехническое строительство
 															.stock__item-link
-																a(href="") перейти в профиль
+																a(href="").link-arrow перейти в профиль
+										.swiper-pagination
+					.main-sliders__bot
+						a(href="").btn 
+							span Смотреть все
 			section.news-slider-cont
 				.wrapper
-					.slider-title
-						.title Новости
-						.slider__nav
-							.swiper-arrow.swiper-button-prev
-							.swiper-arrow.swiper-button-next
+					.news-slider
+						.slider-title
+							.title Новости
+							.slider__nav
+								.swiper-button.swiper-button-prev
+								.swiper-button.swiper-button-next
 
-					.swiper-container
 						.swiper-wrapper
-							- for (let i = 0; i < 4; i++)
+							- for (let i = 0; i < 3; i++)
 								.swiper-slide
 									a(href="").news__item
 										figure
-											img(src="img/news-1.jpg", alt="")
+											img(src='img/photos/news-'+i+'.jpg')
+										.news__item-title Заголовок новости
+										.news__item-text Завод по переработке отходов производства и потребления в строительные материалы. Завод по переработке отходов производства и потребления в строительные материалы. 
+										.news__item-date 05 - февраля - 2019
+			section.news-slider-cont
+				.wrapper
+					.news-slider
+						.slider-title
+							.title Новости 2
+							.slider__nav
+								.swiper-button.swiper-button-prev
+								.swiper-button.swiper-button-next
+
+						.swiper-wrapper
+							- for (let i = 0; i < 3; i++)
+								.swiper-slide
+									a(href="").news__item
+										figure
+											img(src='img/photos/news-'+i+'.jpg')
 										.news__item-title Заголовок новости
 										.news__item-text Завод по переработке отходов производства и потребления в строительные материалы. Завод по переработке отходов производства и потребления в строительные материалы. 
 										.news__item-date 05 - февраля - 2019
