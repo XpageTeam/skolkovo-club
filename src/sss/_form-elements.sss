@@ -87,7 +87,7 @@
 textarea.default-input__input
 
 	&:not(.default-input__input--textarea)
-		max-height: 57px
+		max-height: 135px
 		resize: none
 
 		~ .default-input__label
@@ -188,10 +188,10 @@ textarea.default-input__input
 
 
 		&--select
-			padding: var(--select-padding)
+			padding: var(--input-padding)
 			background-image: url("../img/ico-select-arrow.svg")
 			background-repeat: no-repeat
-			background-position: right 19px center
+			// background-position: right 19px center
 			position: relative
 			cursor: pointer
 
@@ -246,10 +246,6 @@ textarea.default-input__input
 	&__label
 		font-size: em(14)
 		line-height: 1
-		// font-weight: bold
-		// color: rgba(46, 56, 68, .6)
-		// text-transform: uppercase
-		// position: absolute 12px * * 16px
 		margin-bottom: 15px
 		pointer-events: none
 		transition: opacity .3s ease, font-size .3s ease
@@ -264,6 +260,36 @@ textarea.default-input__input
 
 			&:hover
 				background-color: var(--main-color-darken)
+
+
+		&-img
+			position: relative
+			display: flex
+			justify-content: center
+			align-items: flex-end
+			size: 225px 165px
+			border-radius: 5px
+			background-color: var(--background-color)
+			color: #A7A7A7
+			padding: 40px
+			cursor: pointer
+
+			&:before
+				content: ''
+				size: 42px
+				border-radius: 50%
+				background-color: #fff
+				background-image: url('../img/ico-cross.svg')
+				background-position: center
+				background-repeat: no-repeat
+				position: absolute
+				top: calc(50% - 30px)
+				left: calc(50% - 21px)
+
+
+	&__img
+		display: none
+
 .default-radio
 	
 	&__input
