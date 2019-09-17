@@ -4,9 +4,7 @@
 	// align-items: flex-start
 	border-bottom: 1px solid rgba(100, 101, 103, 0.1)
 	padding-bottom: 25px
-
-	&-cont
-		margin-top: 60px
+	padding-top: 60px
 
 	&-auth
 		position: relative
@@ -45,6 +43,7 @@
 
 	&__list
 		display: flex
+		margin: 0 !important
 
 	&__item
 		display: flex
@@ -82,7 +81,52 @@
 
 
 
+@media (max-width: 1500px)
+	
+	.head
+		padding-top: 30px
+
+
+@media (max-width: 1200px)
+	
+	.head-logo
+		svg
+			max-width: 200px
+
+	.head-langs
+		margin-left: 20px
+
+	.main-nav__item:not(:last-child)
+		margin-right: 30px
+
+@media (max-width: 1000px)
+	
+	.main-nav, .head-auth, .head-langs
+		display: none
+
+	.head-logo svg
+		max-height: 45px
+		max-width: 140px
 
 
 
+	.head
+		justify-content: space-between
+		align-items: center
 
+	.head
+		padding-top: 20px
+		padding-bottom: 10px
+
+		&-cont
+			position: fixed !important
+			top: 0
+			left: 0
+			right: 0
+			background-color: #fff
+			z-index: 300
+
+	#content
+		margin-top: 83px
+
+	

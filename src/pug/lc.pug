@@ -14,28 +14,25 @@ html(lang="ru")
 			.inner-content
 				.wrapper
 					section.lc
-						.lc-row
-							.title О компании
-							.lc-links
-								a(href="").edit Редактировать
-								a(href="").btn 
-									span Сохранить
 						form(action="")
-							#filial__list
+							.lc-row
+								.title О компании
+								.lc-links
+									a(href="").edit Редактировать
+									a(href="").btn 
+										span Сохранить
+							.filial__list
 								.lc-company__data(data-id="1")
 									.lc-company__img
 										.filial__item-el--photo
 											.forms__input-cont--multiple
 												.forms__input-cont.forms-input-cont--file
-													input(type="file" id="file-10" accept="image").forms__input.forms__input--file
+													input(type="file" id="11" accept="image").forms__input.forms__input--file
 													input(readonly="" type="text").forms__input.forms__input--file-support.default-input__img
-													label(for="file-10").forms__label--file.default-input__label-img Загрузить лого
+													label(for="11").forms__label--file.default-input__label-img Загрузить лого
 													//span.input-del(title="Удалить")
 										.filial-load-photo
-										//- figure.filial-load-photo
-
-										//- input(type="file" id="file-10" accept="image1").default-input__img.forms__input--file
-										//- label.default-input__label-img(for="file-10") Загрузить лого
+										
 
 									.lc-company__form
 										.form__inputs.form__inputs--2
@@ -60,67 +57,99 @@ html(lang="ru")
 												.default-input
 													input.default-input__input(type="text")
 													label.default-input__label Сайт
-						.lc-row
-							.title Фотогалерея
-							.lc-links
-								a(href="").edit Редактировать
-								a(href="").btn 
-									span Сохранить
+							.lc-row
+								.title Фотогалерея
+								.lc-links
+									a(href="").edit Редактировать
+									a(href="").btn 
+										span Сохранить
 
-						.filial__list
-							#filial__list
-								.filial__item(data-id="0")
-									.filial__item-el
-										.forms__input-cont
-											input.forms__input(type="text" )
-											label.forms__label Адрес магазина:
-										.forms__input-phone
-											.forms__label Телефон магазина:
-											.forms__input-cont--multiple
-												.forms__input-cont
-													input.forms__input(type="text" name="tel" placeholder="+7 (900) 000-00-00")
-												.add-input
-
-									.filial__item-el
-										.forms__input-time
-											.forms__label Режим работы:
-											.forms__input-cont
-												input.forms__input(type="time")
-											.forms__input-cont
-												input.forms__input(type="time")
-										.forms__input-email
-											.forms__label Электронная почта:
-											.forms__input-cont--multiple
-												.forms__input-cont
-													input.forms__input(type="email" placeholder="")
-												.add-input
+							.filial__list
+								.lc-gallery(data-id="9")
+									.filial-load-photo
 									.filial__item-el--photo
-										.forms__label Фото магазина:
 										.forms__input-cont--multiple
 											.forms__input-cont.forms-input-cont--file
-												input(type="file" id="file-1" accept="image").forms__input.forms__input--file
-												input(readonly="" type="text").forms__input.forms__input--file-support
-												label(for="file-1").forms__label--file
-												span.input-del(title="Удалить")
-												.forms__error-message.forms__error-message--file
-													i.forms__error-message-icon
-											.add-input
-									.filial-load-photo
+												input(type="file" id="1111" accept="image").forms__input.forms__input--file
+												input(readonly="" type="text").forms__input.forms__input--file-support.default-input__img
+												label(for="1111").forms__label--file.default-input__label-img Загрузить фото
+									
 
 
 
-							.filial__item-save
-								.button
-									span 
-										input(type="submit" value="Сохранить")
-							.filial-item__add
-								.button
-									span 
-										input(type="submit" value="+ Добавить магазин")
+								
+							.lc-row
+								.title Контакты
+								.lc-links
+									a(href="").edit Редактировать
+									a(href="").btn 
+										span Сохранить
 
-						
+							.filial__list
+								.form__inputs.form__inputs--3
+									.form__inputs-input
+										.default-input
+											input.default-input__input(type="text" placeholder="Введите номер телефона")
+											label.default-input__label Телефон
+											.default-input__error
+									.form__inputs-input
+										.default-input
+											input.default-input__input(type="text" placeholder="Введите E-mail")
+											label.default-input__label E-mail
+											.default-input__error
+									.form__inputs-input
+										.default-input
+											input.default-input__input(type="text" placeholder="Ссылка на сайт")
+											label.default-input__label Сайт
+											.default-input__error
+								
+									
+							.lc-row
+								.title Проекты
+								.lc-links
+									a(href="").edit Редактировать
+									a(href="").btn 
+										span Сохранить
+							.filial__list
+								.lc-company__data(data-id="5")
+									.lc-company__img
+										.filial__item-el--photo
+											.forms__input-cont--multiple
+												.forms__input-cont.forms-input-cont--file
+													input(type="file" id="22" accept="image").forms__input.forms__input--file
+													input(readonly="" type="text").forms__input--file-support.default-input__img
+													label(for="22").forms__label--file.default-input__label-img Загрузить фото
+													//span.input-del(title="Удалить")
+										.filial-load-photo
+										
 
+									.lc-company__form
+										.form__inputs.form__inputs--2
+											.form__inputs-input.form__inputs-input--2
+												.default-input
+													input.default-input__input(type="text")
+													label.default-input__label Название компании
+													.default-input__error
+														.error-text
+											.form__inputs-input.form__inputs-input--2
+												.default-input
+													textarea.default-input__input.default-input__input--textarea
+													label.default-input__label Название компании
+											.form__inputs-input
+												.default-input
+													select.default-input__input.default-input__input--select
+														option(value="1") Выберите направление
+														option(value="2") 1
+														option(value="3") 2
+													label.default-input__label Направление
+											.form__inputs-input
+												.default-input
+													input.default-input__input(type="text")
+													label.default-input__label Сайт
 
+								.filial-item__add
+									input(type="submit" value="Добавить проект")
+											
 
 
 

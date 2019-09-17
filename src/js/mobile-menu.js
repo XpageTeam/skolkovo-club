@@ -19,19 +19,12 @@ $(_ => {
 
 
 	var menuClone = $('.main-nav__list').clone();
-	var socClone = $('footer .soc').clone();
+	var langs = $('.head-langs').clone();
+	var auth = $('.head-auth').clone();
 
-	var phone = $('.head-phone').clone();
-	// var callBack = $('.head-callback').clone();
-	var city = $('.head-location__select').clone();
-	var auth = $('.head-middle > .btn').clone();
-
-	$('.mobile-menu').append(city);
+	$('.mobile-menu').append(langs);
 	$('.mobile-menu').append(menuClone);
-	$('.mobile-menu').append(phone);
-	// $('.mobile-menu').append(callBack);
 	$('.mobile-menu').append(auth);
-	$('.mobile-menu').append(socClone);
 
 	// $('.head-menu__item').find('ul').closest('li').addClass('js__has-submenu');
 

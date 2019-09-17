@@ -43,6 +43,12 @@ $(_ => {
 			  },
 			autoHeight: true,
 			autoplay: sliderObject.classList.contains("active"),
+			breakpoints: {
+			    1000: {
+			    	// slidesPerView: 2,
+			    	spaceBetween: 20
+			    }
+			  }
 			
 		});
 	}

@@ -5,7 +5,11 @@ input[type="hidden"] + .filial__item-el
 	position: relative
 	display: flex
 	justify-content: space-between
+	align-items: center
 	padding: 20px 0
+
+	&:not(:first-child)
+		margin-top: 50px
 
 	&:before
 		content: ''
@@ -32,12 +36,14 @@ input[type="hidden"] + .filial__item-el
 		display: flex
 		margin: 50px 0
 
-		.forms__input--file
-			display: none
 
-	&__form
-		width: calc(100% - 225px - 30px)
-		margin-left: 30px
+	&__img
+		+ .lc-company__form
+			width: calc(100% - 225px - 30px)
+			margin-left: 30px
+
+
+
 
 .lc-links
 	display: flex
@@ -106,35 +112,7 @@ input[type="hidden"] + .filial__item-el
 		.forms__input
 			padding: 0 10px
 
-		.forms__input-time
-			display: flex
-			flex-wrap: wrap
-
-
-
-			.forms
-				&__label
-					width: 100%
-
-				&__input
-					padding: 0 7px
-					text-align: center
-
-					&-cont
-						width: 105px
-
-						+ .forms__input-cont
-							margin-left: 35px
-
-							&:before 
-								content: ''
-								position: absolute
-								left: -18px
-								top: 50%
-								background: #000
-								display: block
-								width: 5px
-								height: 1px
+		
 
 	&__item
 		&-save
@@ -153,6 +131,8 @@ input[type="hidden"] + .filial__item-el
 	&__list
 		margin-top: 55px
 
+		.forms__input--file
+			display: none
 
 
 		.forms__input-cont--multiple
@@ -211,3 +191,53 @@ input[type="hidden"] + .filial__item-el
 .page-personal
 	.faq, .news
 		margin-top: 0
+
+
+.filial-item__add
+	position: relative
+
+	input
+		position: relative
+		width: 100%
+		height: 80px
+		border-radius: 5px
+		background-color: #F1F1F1
+		border: 0
+		color: #A7A7A7 !important
+
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		left: calc(50% - 120px)
+		top: calc(50% - 21px)
+		size: 42px
+		border-radius: 50%
+		background-color: #fff
+		z-index: 10
+		pointer-events: none
+
+
+@media (max-width: 1000px)
+	
+	.lc-company__data
+		flex-direction: column
+
+	.lc-company__img
+		margin-bottom: 20px
+
+	.lc-company__form
+		width: 100% !important
+		margin: 0 !important
+
+
+@media (max-width: 667px)
+	.lc-row
+		flex-direction: column
+		align-items: flex-start
+
+	.lc-links
+		width: 100%
+		display: flex
+		justify-content: space-between

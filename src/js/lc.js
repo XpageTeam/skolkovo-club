@@ -4,79 +4,101 @@ document.addEventListener("DOMContentLoaded", e => {
 	if($('body').hasClass('page-lc')){
 
 
-		var list = document.querySelector('#filial__list');
+		var list = document.querySelectorAll('.filial__list');
 
-		if(list){
-			window.observer = new MutationObserver(function(mutations) {
-			    mutations.forEach(function(mutation) {
-			     let input = mutation.addedNodes[0].querySelector(".forms-input-cont--file:first-child:nth-last-child(2) .forms__input--file");
+		if(list.length){
 
-			     console.log(mutation, input)
+			window.observer = new Array();
 
-			     if (input)
-			     	input.addEventListener("change", InputFileChange);
-			    });
-			});
-			  
-			observer.observe(list, {
-			  	attributes: false, 
-			  	childList: true, 
-			  	characterData: false
-			})
+			for (const ls of list){
+				window.observer.push(new MutationObserver(function(mutations) {
+				    mutations.forEach(function(mutation) {
+				     let input = mutation.addedNodes[0].querySelector(".forms-input-cont--file:first-child:nth-last-child(2) .forms__input--file");
+
+				     console.log(mutation, input)
+
+				     if (input)
+				     	input.addEventListener("change", InputFileChange);
+				    });
+				}));
+				  
+				window.observer[window.observer.length -1].observe(ls, {
+				  	attributes: false, 
+				  	childList: true, 
+				  	characterData: false
+				})
+			}
 		  	
 		}
 
 		$("body").on("change", ".forms__input--file", function(e){
 
-			var value = $(this)[0].files[0].name;
-			// console.log(value);
-			var inputHasFile = $(this).next('input[type="text"]').val(value);
+			var value = $(this)[0].files[0].name,
+				inputHasFile = $(this).next('input[type="text"]').val(value);
 
-			if(inputHasFile.length){
-				$(this).nextAll('label').remove();
-				// $(this).nextAll(".js__input-del").addClass('close-input');
-			}
+			// if(inputHasFile.length){
+			// 	$(this).nextAll('.default-input__label-img').remove();
+			// }
 
-		});
-
-
-
-
-		$("body").on("click", ".filial__item-el .add-input", function(){
-
-			var time = +new Date(),
-				$this = $(this),
-				getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
-
-
-			var inputBlock = $this.closest(".forms__input-cont--multiple").append('<div class="forms__input-cont">\
-					<input type="text" id="'+time+'" name="'+getName+'"  class="forms__input">\
-					<span class="js__input-del" title="Удалить"></span>\
-				</div>');
+			
 
 		});
 
 
+		// var lcGallery = document.querySelector('.lc-gallery');
 
-		$("body").on("click", ".filial__item-el--photo .add-input", function(){
-
-			var time = +new Date();
-			var $this = $(this);
-			var getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
+		
 
 
-			var inputBlock = $this.closest(".forms__input-cont--multiple").append('<div class="forms__input-cont forms-input-cont--file">\
-					<input class="forms__input forms__input--file" name="'+getName+'" type="file" id="'+time+'" accept="image">\
-					<input class="forms__input forms__input--file-support" readonly="" type="text">\
-					<label class="forms__label--file" for="'+time+'"></label>\
-					<span class="js__input-del" title="Удалить"></span>\
-				</div>');
 
-			let newInput = inputBlock.find(".forms-input-cont--file:last-child input[type='file']")[0]
+		// if(lcGallery.length){
 
-			newInput.addEventListener("change", InputFileChange);
+		// 	$("body").on("click", ".filial__item-el .add-input", function(){
 
-		});
+		// 		var time = +new Date(),
+		// 			$this = $(this),
+		// 			getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
+
+
+		// 		var inputBlock = $this.closest(".forms__input-cont--multiple").append('<div class="forms__input-cont">\
+		// 				<input type="text" id="'+time+'" name="'+getName+'"  class="forms__input">\
+		// 				<span class="js__input-del" title="Удалить"></span>\
+		// 			</div>');
+
+		// 	});
+
+
+
+		// 	$("body").on("click", ".filial__item-el--photo .add-input", function(){
+
+		// 		var time = +new Date();
+		// 		var $this = $(this);
+		// 		var getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
+
+
+		// 		var inputBlock = $this.closest(".forms__input-cont--multiple").append('<div class="forms__input-cont forms-input-cont--file">\
+		// 				<input class="forms__input forms__input--file" name="'+getName+'" type="file" id="'+time+'" accept="image">\
+		// 				<input class="forms__input forms__input--file-support" readonly="" type="text">\
+		// 				<label class="forms__label--file" for="'+time+'"></label>\
+		// 				<span class="js__input-del" title="Удалить"></span>\
+		// 			</div>');
+
+		// 		let newInput = inputBlock.find(".forms-input-cont--file:last-child input[type='file']")[0]
+
+		// 		newInput.addEventListener("change", InputFileChange);
+
+		// 	});
+
+			
+
+
+		// }
+
+
+
+
+
+
 
 
 
@@ -99,8 +121,13 @@ document.addEventListener("DOMContentLoaded", e => {
 		};
 
 
-		if($(".filial__item-el--photo input[type='file']").length)
-			document.querySelector(".filial__item-el--photo input[type='file']").addEventListener("change", InputFileChange);
+		if(!$(".filial__item-el--photo input[type='file']").length)
+			return 
+
+			const fileInputs = document.querySelectorAll(".filial__item-el--photo input[type='file']");
+
+			for (const fileInput of fileInputs)
+				fileInput.addEventListener("change", InputFileChange);
 
 
 

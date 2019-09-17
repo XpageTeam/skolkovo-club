@@ -36,6 +36,9 @@
 			padding: 30px
 			transition: box-shadow .3s ease-in-out
 
+			img
+				display: block
+
 			&:hover
 				box-shadow: var(--box-shadow)
 
@@ -54,3 +57,39 @@
 		display: flex
 
 
+
+@media (max-width: 1600px)
+
+	.news-slider-cont
+		padding: 30px 0
+
+
+	.slider-title
+		margin-bottom: 30px
+
+
+@media (max-width: 1200px)
+	
+	.news__list
+		margin: 0 -15px
+
+		.news__item
+			padding: 15px
+
+			&-title
+				margin-bottom: 10px
+
+@media (max-width: 667px)
+	
+	.news__item 
+		figure
+			margin-bottom: 20px
+
+		&-title
+			margin-bottom: 10px
+
+	.news__list
+		margin: 0 -15px
+
+		.news__item
+			width: 100%

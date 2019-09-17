@@ -97,3 +97,59 @@
 			height: 100%
 			transform: translate3d(-50%,0,0)
 			z-index: 10
+
+
+@media (max-width: 1300px)
+
+	.contacts__map
+		max-width: 50%
+
+@media (max-width: 1200px)
+
+	.contacts__map
+		max-width: 50%
+		margin-right: 30px
+
+	.contacts__slider
+		width: calc(100% - 510px)
+
+@media (max-width: 1000px)
+	
+	.contacts
+		flex-direction: column-reverse
+		width: 100%
+		align-items: flex-start
+
+		&__map
+			max-width: 100%
+			margin: 0
+
+	.contacts__slider
+		width: calc(100% - 350px)
+
+	.contacts__address-item
+		padding: 15px 0
+
+	.contacts__slider-bot .contacts__address
+		margin-right: 30px
+
+	.contacts__slider-cont
+		padding: 40px 0
+		margin: 40px 0
+
+@media (max-width: 667px)
+	
+	.contacts__address-item
+		padding: 15px 0
+
+	.contacts__slider-bot
+		flex-direction: column
+
+	.contacts__slider
+		width: 100%
+
+	.contacts__slider .swiper-list:before
+		display: none
+
+	.contacts__slider .swiper-container-horizontal>.swiper-pagination-bullets
+		margin-top: 20px

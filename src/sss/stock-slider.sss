@@ -212,3 +212,122 @@
 
 			&:nth-child(n + 4)
 				display: none !important
+
+
+@media (max-width: 1600px)
+	
+	.main-sliders
+		&__top
+			margin-bottom: 30px
+
+		&__cont
+			padding: 30px 0 30px
+
+
+@media (max-width: 1200px)
+	
+	.main-sliders
+
+		&__btns
+			padding: 30px
+
+
+		&__btn .text
+			margin-left: 20px
+
+		&__sliders
+			width: calc(100% - 420px)
+			margin-left: 25px
+
+		.swiper-list:before
+			transform: translate3d(-58%,0,0)
+
+
+		.stock__item
+			padding: 30px
+
+
+@media (max-width: 1000px)
+	
+	.main-sliders
+		flex-direction: column
+
+		&__btn
+			margin: 0 !important
+			padding: 17px 20px
+			pointer-events: none
+			background-color: #fff
+			opacity: 0
+			border-bottom: 1px solid var(--background-color) 
+
+			&.active
+				order: -1
+				opacity: 1 !important
+				background-color: var(--background-color)
+
+
+
+		&__btns
+			position: relative
+			padding: 0
+			display: flex
+			flex-direction: column
+
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				right: 15px
+				top: calc(50% - 4px)
+				size: 8px
+				border-right: 1px solid #000
+				border-bottom: 1px solid #000
+				transform: rotate(45deg)
+				transition: transform .3s ease
+
+			&.js__opened
+				.main-sliders__btn
+					opacity: 1
+					pointer-events: all
+
+				&:after
+					transform: rotate(225deg)
+
+			&-cont
+				margin-bottom: 20px
+				height: 55px
+
+
+		.swiper-list:before
+			display: none
+
+		&__sliders
+			width: 100%
+			margin: 0
+
+@media (max-width: 667px)
+	
+	.main-sliders 
+		.stock__item
+			padding: 20px
+
+
+		&__bot
+			margin-top: 20px
+
+
+	.stock__item-top 
+		figure
+			margin-right: 15px
+			width: 85px
+			height: 70px
+
+	.stock__item
+		&-bot
+			flex-direction: column
+
+			.tag
+				display: inline-block
+
+		&-tags
+			margin-bottom: 20px

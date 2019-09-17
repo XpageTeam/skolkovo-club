@@ -42,6 +42,13 @@ require("../css/jquery.fancybox.css")
 document.addEventListener("DOMContentLoaded", function(){
 
 
+	$('.tags__list').click(function(){
+		var $this = $(this);
+
+		$this.toggleClass('js__open');
+	})
+
+
 	var contactsSwiper = new Swiper('.contacts__slider .swiper-list', {
 			slidesPerView: 1,
 			spaceBetween: 40,
@@ -243,6 +250,17 @@ document.addEventListener("DOMContentLoaded", function(){
 			nextEl: '.news-slider .swiper-button-next',
 			prevEl: '.news-slider .swiper-button-prev',
 		},
+		breakpoints: {
+		    1200: {
+		      spaceBetween: 20
+		    },
+		    1000: {
+		    	slidesPerView: 2,
+		    },
+		    667: {
+		    	slidesPerView: 1,
+		    }
+		  }
 	});
 
 
