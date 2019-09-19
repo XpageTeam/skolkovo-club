@@ -31,18 +31,49 @@ document.addEventListener("DOMContentLoaded", e => {
 		  	
 		}
 
-		$("body").on("change", ".forms__input--file", function(e){
+
+		if(!$('div').hasClass('lc-gallery')){
+			$("body").on("change", ".forms__input--file", function(e){
+
+				var value = $(this)[0].files[0].name,
+					inputHasFile = $(this).next('input[type="text"]').val(value);
+
+				if(inputHasFile.length){
+					$(this).nextAll('.default-input__label-img').remove();
+				}
+			});
+
+		}
+
+
+
+
+		var time = +new Date();
+		var $this = $(this);
+		var getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
+
+
+		$("body").on("change", ".lc-gallery .forms__input--file", function(e){
 
 			var value = $(this)[0].files[0].name,
 				inputHasFile = $(this).next('input[type="text"]').val(value);
 
-			// if(inputHasFile.length){
-			// 	$(this).nextAll('.default-input__label-img').remove();
-			// }
+			if(inputHasFile.length){
+
+				$('.lc-gallery .forms__input-cont--multiple').prepend('<div class="forms__input-cont forms-input-cont--file">\
+						<input class="forms__input forms__input--file" name="'+getName+'" type="file" id="'+time+'" accept="image">\
+						<input class="forms__input forms__input--file-support" readonly="" type="text">\
+						<label class="forms__label--file default-input__label-img" for="'+time+'">Загрузить фото</label>\
+						<span class="js__input-del" title="Удалить"></span>\
+					</div>');
+
+
+			}
 
 			
-
 		});
+
+
 
 
 		// var lcGallery = document.querySelector('.lc-gallery');
