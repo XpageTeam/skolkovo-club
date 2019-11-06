@@ -362,6 +362,28 @@ input[type="hidden"] + .filial__item-el
 		width: 100% !important
 		margin: 0 !important
 
+	.lc-company__data
+		margin: 0
+		&:not(:first-child)
+			margin-top: 30px
+
+	.page-lc
+		#content
+			margin-top: 0
+
+	.lc-row:first-child
+		margin-top: 0
+
+	.filial__list
+		margin-top: 30px
+
+	.lc-gallery .photo
+		width: calc((100% - 125px)/3)
+
+	.filial-item__add
+		padding: 10px 0
+		margin-top: 30px
+
 
 @media (max-width: 667px)
 	.lc-row
@@ -372,3 +394,6 @@ input[type="hidden"] + .filial__item-el
 		width: 100%
 		display: flex
 		justify-content: space-between
+
+	.lc-gallery .photo
+		width: calc((100% - 125px)/1)
