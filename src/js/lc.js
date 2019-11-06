@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", e => {
 				window.observer[window.observer.length -1].observe(ls, {
 				  	attributes: false, 
 				  	childList: true, 
+				  	subtree: true,
 				  	characterData: false
 				})
 			}
@@ -127,6 +128,11 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
+		$('.lc-links').click(function(){
+			$(this).closest('.lc-row').nextAll('.filial__list').find('.lc-company__data').toggleClass('readonly');
+		})
+
+
 
 
 
@@ -144,12 +150,22 @@ document.addEventListener("DOMContentLoaded", e => {
 		    fr.addEventListener("load", e => {
 				let $photos = $shopBlock.find('.filial-load-photo');
 
-	    		$photos.append("<img src='"+fr.result+"' />")
+	    		$photos.prepend("<div class='img_block photo'>\
+	    			<div class='del_block photo-del'></div>\
+	    			<img src='"+fr.result+"' />\
+	    			</div>")
 		    }, false);
 
 		    fr.readAsDataURL(this.files[0]);
 		  }
 		};
+
+		$('body').on('click', ".lc-company__img .photo-del", function(){
+			$(this).closest('.filial-load-photo > *, .lc-company__img .photo').remove();
+			// $(this).closest('.lc-company__img').prepend('<div class="lc-company__img"></div>');
+
+		})
+
 
 
 		if(!$(".filial__item-el--photo input[type='file']").length)
@@ -184,5 +200,7 @@ document.addEventListener("DOMContentLoaded", e => {
 		})
 
 	};
+
+	
 
 });

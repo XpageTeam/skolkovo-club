@@ -26,21 +26,75 @@ input[type="hidden"] + .filial__item-el
 	.btn
 		background-color: #fff
 		margin-left: 25px
+		cursor: pointer
 
 	.edit
 		color: #A7A7A7
 
 
+
+
+
+
+
+
 .lc-company
 	&__data
+		position: relative
 		display: flex
 		margin: 50px 0
 
+		+ .lc-company__data
+			margin-top: 150px
+
+		&.readonly
+			.photo-del
+				display: none
+
+			.lc-company__img
+				pointer-events: none
+
+				.filial__item-el--photo
+					display: none
+
+
+		.default-input__input--textarea
+			line-height: 1.8 
+			padding: 10px 0 !important
+			resize: none
 
 	&__img
+		width: 225px
+		flex: none
+
+		.photo
+			img
+				width: 100%
+
+			~ .filial__item-el--photo
+				display: none
+
+
+		> img
+			~ .filial__item-el--photo
+				display: none
+
 		+ .lc-company__form
 			width: calc(100% - 225px - 30px)
 			margin-left: 30px
+
+		.filial-load-photo:not(:empty)
+			~ *
+				display: none
+
+		.filial-load-photo:empty
+
+			+ .filial__item-el--photo
+				display: block
+
+
+
+
 
 
 
@@ -75,6 +129,32 @@ input[type="hidden"] + .filial__item-el
 			&:not(:last-child)
 				display: none
 
+.photo
+	position: relative
+
+	img
+		display: block
+		object-fit: cover
+
+.lc-gallery
+	.photo
+		width: calc((100% - 25px * 5) / 5)
+		height: 165px
+		margin: 0 0 25px 25px
+
+
+.photo-del
+	display: block
+	size: 30px
+	border-radius: 50%
+	background-color: #fff
+	background-image: url('../img/ico-del.svg')
+	background-repeat: no-repeat
+	background-position: 50%
+	position: absolute
+	top: 10px
+	right: 10px
+	cursor: pointer
 
 .filial
 
@@ -92,6 +172,7 @@ input[type="hidden"] + .filial__item-el
 
 		img
 			border-radius: 5px
+			width: 100%
 
 		&:empty 
 			display: none
@@ -102,7 +183,6 @@ input[type="hidden"] + .filial__item-el
 
 			input 
 				color: #fff
-
 
 
 	&-name
@@ -125,6 +205,12 @@ input[type="hidden"] + .filial__item-el
 			&:not(:first-child)
 				margin-left: auto
 
+			&--photo
+				&[style*="display: none"]
+					~ .photo
+						.photo-del
+							opacity: 0 
+							pointer-events: none
 
 		&-save
 			width: 100%
@@ -137,8 +223,6 @@ input[type="hidden"] + .filial__item-el
 			padding: 0 10px
 
 		
-
-	&__item
 		&-save
 			.button 
 				span
@@ -154,6 +238,8 @@ input[type="hidden"] + .filial__item-el
 			
 	&__list
 		margin-top: 55px
+		display: flex
+		flex-direction: column
 
 		.forms__input--file
 			display: none
@@ -216,9 +302,20 @@ input[type="hidden"] + .filial__item-el
 	.faq, .news
 		margin-top: 0
 
+.filial-item__del
+	position: absolute
+	top: -20px
+	right: 0
 
 .filial-item__add
 	position: relative
+	order: 1
+
+	background-color: #F1F1F1
+	padding: 20px 0
+	border-radius: 5px
+	display: flex
+	justify-content: center
 
 	input
 		position: relative
@@ -230,17 +327,27 @@ input[type="hidden"] + .filial__item-el
 		color: #A7A7A7 !important
 
 
-	&:before
-		content: ''
-		display: block
-		position: absolute
-		left: calc(50% - 120px)
-		top: calc(50% - 21px)
-		size: 42px
-		border-radius: 50%
-		background-color: #fff
-		z-index: 10
-		pointer-events: none
+	a
+		position: relative
+		color: #A7A7A7
+		display: flex
+		align-items: center
+
+
+		&:before
+			content: ''
+			display: block
+			left: calc(50% - 120px)
+			top: calc(50% - 21px)
+			size: 42px
+			border-radius: 50%
+			background-color: #fff
+			z-index: 10
+			pointer-events: none
+			background-image: url('../img/ico-add.svg')
+			background-repeat: no-repeat
+			background-position: 50%
+			margin-right: 20px
 
 
 @media (max-width: 1000px)
