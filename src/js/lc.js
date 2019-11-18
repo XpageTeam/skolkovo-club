@@ -49,12 +49,12 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-		var time = +new Date();
-		var $this = $(this);
-		var getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
 
 
 		$("body").on("change", ".lc-gallery .forms__input--file", function(e){
+			var time = +new Date();
+			var $this = $(this);
+			var getName = $(this).closest('.forms__input-cont--multiple').find('.default-input__img').siblings('.imagesFoto').attr("name");
 
 			var value = $(this)[0].files[0].name,
 				inputHasFile = $(this).next('input[type="text"]').val(value);
@@ -77,64 +77,12 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-		// var lcGallery = document.querySelector('.lc-gallery');
-
-		
-
-
-
-		// if(lcGallery.length){
-
-		// 	$("body").on("click", ".filial__item-el .add-input", function(){
-
-		// 		var time = +new Date(),
-		// 			$this = $(this),
-		// 			getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
-
-
-		// 		var inputBlock = $this.closest(".forms__input-cont--multiple").append('<div class="forms__input-cont">\
-		// 				<input type="text" id="'+time+'" name="'+getName+'"  class="forms__input">\
-		// 				<span class="js__input-del" title="Удалить"></span>\
-		// 			</div>');
-
-		// 	});
-
-
-
-		// 	$("body").on("click", ".filial__item-el--photo .add-input", function(){
-
-		// 		var time = +new Date();
-		// 		var $this = $(this);
-		// 		var getName = $(this).closest('.forms__input-cont--multiple').find('.forms__input-cont:first-child input').attr("name");
-
-
-		// 		var inputBlock = $this.closest(".forms__input-cont--multiple").append('<div class="forms__input-cont forms-input-cont--file">\
-		// 				<input class="forms__input forms__input--file" name="'+getName+'" type="file" id="'+time+'" accept="image">\
-		// 				<input class="forms__input forms__input--file-support" readonly="" type="text">\
-		// 				<label class="forms__label--file" for="'+time+'"></label>\
-		// 				<span class="js__input-del" title="Удалить"></span>\
-		// 			</div>');
-
-		// 		let newInput = inputBlock.find(".forms-input-cont--file:last-child input[type='file']")[0]
-
-		// 		newInput.addEventListener("change", InputFileChange);
-
-		// 	});
-
-			
-
-
-		// }
-
-
 
 		$('.lc-links').click(function(){
-			$(this).closest('.lc-row').nextAll('.filial__list').find('.lc-company__data').toggleClass('readonly');
+			$(this).closest('.lc-row').next('.filial__list').find('.lc-company__data').toggleClass('readonly');
+
+
 		})
-
-
-
-
 
 
 
@@ -162,7 +110,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
 		$('body').on('click', ".lc-company__img .photo-del", function(){
 			$(this).closest('.filial-load-photo > *, .lc-company__img .photo').remove();
-			// $(this).closest('.lc-company__img').prepend('<div class="lc-company__img"></div>');
 
 		})
 

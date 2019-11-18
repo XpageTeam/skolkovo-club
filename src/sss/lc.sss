@@ -47,7 +47,21 @@ input[type="hidden"] + .filial__item-el
 		+ .lc-company__data
 			margin-top: 150px
 
+		&:not(.multifile-container):not(.readonly)
+			.lc-company__form
+
+				textarea 
+					border: 1px solid var(--border-color) !important
+					padding: 10px !important
+
+				input, select
+					padding: 0 10px !important
+					border: 1px solid var(--border-color) !important
+
 		&.readonly
+			pointer-events: none
+
+
 			.photo-del
 				display: none
 
