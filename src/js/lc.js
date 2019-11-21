@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", e => {
 			for (const ls of list){
 				window.observer.push(new MutationObserver(function(mutations) {
 				    mutations.forEach(function(mutation) {
-				     let input = mutation.addedNodes[0].querySelector(".forms-input-cont--file:first-child:nth-last-child(2) .forms__input--file");
+				     let input = mutation.addedNodes[0].querySelector(".forms-input-cont--file .forms__input--file");
 
 				     console.log(mutation, input)
 
@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
+		var time = +new Date();
 
 		$("body").on("change", ".lc-gallery .forms__input--file", function(e){
-			var time = +new Date();
 			var $this = $(this);
 			var getName = $(this).closest('.forms__input-cont--multiple').find('.default-input__img').siblings('.imagesFoto').attr("name");
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 			if(inputHasFile.length){
 
-				$('.lc-gallery .forms__input-cont--multiple').prepend('<div class="forms__input-cont forms-input-cont--file">\
+				$('.lc-gallery .forms__input-cont--multiple').prepend('<div class="forms__input-cont forms-input-cont--file" data-el-id="'+time+'">\
 						<input class="forms__input forms__input--file" name="'+getName+'" type="file" id="'+time+'" accept="image">\
 						<input class="forms__input forms__input--file-support" readonly="" type="text">\
 						<label class="forms__label--file default-input__label-img" for="'+time+'">Загрузить фото</label>\
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", e => {
 		    fr.addEventListener("load", e => {
 				let $photos = $shopBlock.find('.filial-load-photo');
 
-	    		$photos.prepend("<div class='img_block photo'>\
+	    		$photos.prepend("<div class='img_block photo' data-el-id='"+time+"'>\
 	    			<div class='del_block photo-del'></div>\
 	    			<img src='"+fr.result+"' />\
 	    			</div>")
@@ -108,8 +108,20 @@ document.addEventListener("DOMContentLoaded", e => {
 		  }
 		};
 
-		$('body').on('click', ".lc-company__img .photo-del", function(){
-			$(this).closest('.filial-load-photo > *, .lc-company__img .photo').remove();
+		$('body').on('click', ".photo-del", function(){
+
+			var $this = $(this);
+
+			var elId = $this.closest('.photo').attr("data-el-id");
+
+			$this.closest('.filial-load-photo').find('.forms-input-cont--file[data-el-id="'+elId+'"]').remove();
+			
+
+			$(this).closest('.lc-company__img').find('.photo').remove();
+
+
+
+
 
 		})
 

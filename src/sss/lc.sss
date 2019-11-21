@@ -139,8 +139,15 @@ input[type="hidden"] + .filial__item-el
 				margin-left: 25px
 
 	.forms__input-cont--multiple
+
+		.forms__input--file-support
+			display: none
+
+		.js__input-del
+			display: none
+
 		.forms__input-cont
-			&:not(:last-child)
+			&:not(:first-child)
 				display: none
 
 .photo
@@ -266,7 +273,7 @@ input[type="hidden"] + .filial__item-el
 
 			.forms__input-cont
 				max-width: 235px
-				width: calc((100% - 40px * 3) / 3)
+				// width: calc((100% - 40px * 3) / 3)
 				margin: 0 0 30px 40px
 
 .add-input
