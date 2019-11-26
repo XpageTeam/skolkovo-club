@@ -48,8 +48,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 
-
-
 		var time = +new Date();
 
 		$("body").on("change", ".lc-gallery .forms__input--file", function(e){
@@ -70,12 +68,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
 
 			}
-
-			
 		});
-
-
-
 
 
 		$('.lc-links').click(function(){
@@ -111,16 +104,12 @@ document.addEventListener("DOMContentLoaded", e => {
 		$('body').on('click', ".photo-del", function(){
 
 			var $this = $(this);
-
 			var elId = $this.closest('.photo').attr("data-el-id");
 
 			$this.closest('.filial-load-photo').find('.forms-input-cont--file[data-el-id="'+elId+'"]').remove();
 			
 
 			$(this).closest('.lc-company__img').find('.photo').remove();
-
-
-
 
 
 		})
@@ -134,7 +123,6 @@ document.addEventListener("DOMContentLoaded", e => {
 
 			for (const fileInput of fileInputs)
 				fileInput.addEventListener("change", InputFileChange);
-
 
 
 			$("body").on("click", ".filial__item-el--photo .input-del", function(){
