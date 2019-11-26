@@ -71,9 +71,9 @@ document.addEventListener("DOMContentLoaded", e => {
 		});
 
 
-		$('.lc-links').click(function(){
-			$(this).closest('.lc-row').next('.filial__list').find('.lc-company__data').toggleClass('readonly');
 
+		$('.save_edit_projects').click(function(){
+			$(this).closest('.lc-company__data').toggleClass('readonly');
 
 		})
 

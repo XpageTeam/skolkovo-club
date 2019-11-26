@@ -45,7 +45,18 @@ input[type="hidden"] + .filial__item-el
 	&__data
 		position: relative
 		display: flex
+		flex-wrap: wrap
 		margin: 50px 0
+
+		.save_edit_projects
+			width: 100%
+			display: flex
+			justify-content: flex-end
+
+			a
+				padding: 15px 25px
+				border: 1px solid var(--border-color)
+				border-radius: 5px	
 
 		+ .lc-company__data
 			margin-top: 150px
@@ -62,7 +73,8 @@ input[type="hidden"] + .filial__item-el
 					border: 1px solid var(--border-color) !important
 
 		&.readonly
-			pointer-events: none
+			.lc-company__form
+				pointer-events: none
 
 
 			.photo-del
